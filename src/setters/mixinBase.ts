@@ -2,6 +2,7 @@ import { AxiosProxyConfig } from 'axios';
 import { httpRequest, buildQueryString, removeEmptyValue } from '../helpers/utils';
 import * as crypto from 'crypto';
 import {
+    mixinC2c,
     mixinMargin,
     mixinMarket,
     mixinSimpleEarn,
@@ -16,7 +17,7 @@ import { WebsocketCallbacks, WebsocketConnection } from '../modules/websocket/we
 import { SpotOptions, WebsocketAPIOptions } from './types';
 
 
-export const SpotBase = mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixinSubAccount(mixinTrade(mixinWallet(class {
+export const SpotBase = mixinC2c(mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixinSubAccount(mixinTrade(mixinWallet(class {
     apiKey: string;
     apiSecret: string;
     baseURL: string;
@@ -87,7 +88,7 @@ export const SpotBase = mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixi
         }
         return `${path}?${params}&signature=${signature}`;
     }
-})))))));
+}))))))));
 
 export const WebsocketFeaturesBase = mixinWsAccount(mixinWsMarket(mixinWsTrade(mixinWsUserData(WebsocketBase(class {
     apiKey: string;

@@ -1,3 +1,4 @@
+import * as RestC2cTypes from './modules/restful/c2c/types';
 import * as RestMarginTypes from './modules/restful/margin/types';
 import * as RestMarketTypes from './modules/restful/market/types';
 import * as RestSimpleEarnTypes from './modules/restful/simpleEarn/types';
@@ -199,6 +200,7 @@ export {    AccountSnapshotType,
     WebsocketStream,
     WithdrawHistory,
     WorkingFloor,
+    RestC2cTypes,
     RestMarginTypes,
     RestMarketTypes,
     RestSimpleEarnTypes,
