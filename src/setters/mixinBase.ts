@@ -39,7 +39,7 @@ export const SpotBase = mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixi
         this.privateKeyAlgo = options.privateKeyAlgo || 'RSA';
     }
 
-    async makeRequest(method: string, url: string) {
+    async makeRequest(method: string, url: string, data?: object) {
         return await httpRequest({
             method,
             baseURL: this.baseURL,
@@ -47,7 +47,8 @@ export const SpotBase = mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixi
             apiKey: this.apiKey,
             timeout: this.timeout,
             proxy: this.proxy,
-            httpsAgent: this.httpsAgent
+            httpsAgent: this.httpsAgent,
+            data
         });
     }
 

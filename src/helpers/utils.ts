@@ -10,11 +10,12 @@ interface HttpRequestConfig {
     timeout?: number;
     proxy?: AxiosProxyConfig | false;
     httpsAgent?: boolean;
+    data?: object;
 }
 
 export async function httpRequest(config: HttpRequestConfig) {
     try {
-        const { baseURL, apiKey, method, url, timeout, proxy, httpsAgent } = config;
+        const { baseURL, apiKey, method, url, timeout, proxy, httpsAgent, data } = config;
         const options = {
             baseURL,
             timeout,
@@ -26,10 +27,11 @@ export async function httpRequest(config: HttpRequestConfig) {
                 'Content-Type': 'application/json',
                 'X-MBX-APIKEY': apiKey,
                 'User-Agent': `${appName}/${appVersion}`
-            }
+            },
+            data
         };
-        const { data } = await axios.request(options);
-        return data;
+        const response = await axios.request(options);
+        return response.data;
     } catch (error) {
         if (axios.isAxiosError(error) && error.response) {
             throw error.response.data.msg;
