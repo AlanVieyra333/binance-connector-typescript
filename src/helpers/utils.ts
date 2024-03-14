@@ -26,7 +26,6 @@ export async function httpRequest(config: HttpRequestConfig) {
             headers: {
                 'Content-Type': 'application/json',
                 'X-MBX-APIKEY': apiKey,
-                'User-Agent': `${appName}/${appVersion}`
             },
             data
         };
