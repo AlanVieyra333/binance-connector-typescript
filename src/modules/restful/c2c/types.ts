@@ -1,72 +1,115 @@
+export interface CommonPageRet_AdSearchResp extends CommonPageRet {
+  data?: AdSearchResp[];
+}
+
+export interface CommonRet_AdSearchResp extends CommonPageRet {
+  data?: AdSearchResp;
+}
+
+export interface AdSearchResp {
+  adv: AdDetailResp;
+  advertiser: AdvertiserVo;
+}
+
+export interface searchOptions {
+  additionalKycVerifyFilter?: number;
+  countries?: string[];
+  filterType?: string;
+  order?: string;
+  payTypes?: string[];
+  publisherType?: string;
+  sort?: string;
+  transAmount?: number;
+}
+
+export interface CommonPageRet_UserOrderHistory extends CommonPageRet {
+  data?: UserOrderHistory[];
+}
+
+interface UserOrderHistory {
+  additionalKycVerify?: number;
+  advNo?: string;
+  advertisementRole?: string;
+  amount?: string;
+  asset?: string;
+  commission?: number;
+  counterPartNickName?: string;
+  createTime?: string; // Date string in ISO 8601 format (YYYY-MM-DDTHH:mm:ssZ)
+  fiat?: string;
+  fiatSymbol?: string;
+  orderNumber?: string;
+  orderStatus?: string;
+  payMethodName?: string;
+  takerAmount?: number;
+  takerCommission?: number;
+  takerCommissionRate?: number;
+  totalPrice?: string;
+  tradeType?: string;
+  unitPrice?: number;
+}
+
+export interface listUserOrderHistoryOptions {
+  page?: number;
+  rows?: number;
+  startTimestamp?: number;
+  endTimestamp?: number;
+  tradeType?: string;
+  orderStatus?: any; // 1 - TRADING (WAIT_FOR_PAYMENT), 2 - WAIT_FOR_RELEASE, 3 - APPEALING 4 - COMPLETED, 6 - CANCELLED, 7 - CANCELLED_BY_SYSTEM
+}
+
 export interface AdQueryByPageReq {
-    advNo?: string;
-    advStatus?: number;
-    asset?: string;
-    classify?: string;
-    endDate?: string; // ISO 8601 date string (optional)
-    fiatUnit?: string;
-    inDeal?: number;
-    order?: string;
-    sort?: string;
-    startDate?: string; // ISO 8601 date string (optional)
-    tradeType?: string;
+  advNo?: string;
+  advStatus?: number;
+  asset?: string;
+  classify?: string;
+  endDate?: string; // Date string in ISO 8601 format (YYYY-MM-DDTHH:mm:ssZ)
+  fiatUnit?: string;
+  inDeal?: number;
+  order?: string;
+  sort?: string;
+  startDate?: string; // Date string in ISO 8601 format (YYYY-MM-DDTHH:mm:ssZ)
+  tradeType?: string;
 }
 
 export interface CommonRet_AdDetailResp extends CommonPageRet {
-    data?: AdDetailResp;
+  data?: AdDetailResp;
 }
 
 export interface CommonPageRet_AdDetailResp extends CommonPageRet {
-    data?: AdDetailResp[];
+  data?: AdDetailResp[];
 }
 
 interface CommonPageRet {
-    code?: string;
-    data?: any;
-    message?: string;
-    success?: boolean;
-    total?: number;
+  code?: string;
+  data?: any;
+  message?: string;
+  success?: boolean;
+  total?: number;
 }
 
-interface AdDetailResp {
+export interface AdDetailResp {
     advNo?: string;
     advStatus?: number;
-    advUpdateTime?: string; // ISO 8601 date string
-    advVisibleRet?: {
-        orderFlowVisible: number;
-        surplusAmountVisible: number;
-        userSetVisible: number;
-    };
+    advUpdateTime?: string;
+    advVisibleRet?: AdVisibleRetVo;
     asset?: string;
     assetLogo?: string;
     assetScale?: number;
-    assetVo?: {
-        asset: string;
-        decimalScale: number;
-        iconUrl: string;
-        name: string;
-    };
+    assetVo?: AssetDetail;
     autoReplyMsg?: string;
     buyerBtcPositionLimit?: number;
     buyerKycLimit?: number;
     buyerRegDaysLimit?: number;
     classify?: string;
     commissionRate?: number;
-    createTime?: string; // ISO 8601 date string
+    createTime?: string;
     currencyRate?: number;
     dynamicMaxSingleTransAmount?: number;
     dynamicMaxSingleTransQuantity?: number;
     fiatScale?: number;
     fiatSymbol?: string;
     fiatUnit?: string;
-    fiatVo?: {
-        countryCode: string;
-        currencyCode: string;
-        currencyScale: number;
-        currencySymbol: string;
-        iconUrl: string;
-        priceScale: number;
-    };
+    fiatVo?: FiatDetail;
     initAmount?: number;
     isTradable?: boolean;
     maxSingleTransAmount?: number;
@@ -83,21 +126,8 @@ interface AdDetailResp {
     surplusAmount?: number;
     takerAdditionalKycRequired?: number;
     tradableQuantity?: number;
-    tradeMethodCommissionRateVoList?: {
-        commissionRate: number;
-        tradeMethodIdentifier: string;
-        tradeMethodName: string;
-    }[];
-    tradeMethods?: {
-        iconUrlColor: string;
-        identifier: string;
-        payAccount: string;
-        payBank: string;
-        payId: number;
-        paySubBank: string;
-        payType: string;
-        tradeMethodName: string;
-    }[];
+    tradeMethodCommissionRateVoList?: TradeMethodCommissionRateVo[];
+    tradeMethods?: AdTradeMethodResp[];
     tradeType?: string;
     userAllTradeCountMax?: number;
     userAllTradeCountMin?: number;
@@ -114,4 +144,61 @@ interface AdDetailResp {
     userTradeVolumeFilterTime?: number;
     userTradeVolumeMax?: number;
     userTradeVolumeMin?: number;
-}
+  }
+  
+  interface AdVisibleRetVo {
+    orderFlowVisible?: number;
+    surplusAmountVisible?: number;
+    userSetVisible?: number;
+  }
+  
+  interface AssetDetail {
+    asset?: string;
+    decimalScale?: number;
+    iconUrl?: string;
+    name?: string;
+  }
+  
+  interface FiatDetail {
+    countryCode?: string;
+    currencyCode?: string;
+    currencyScale?: number;
+    currencySymbol?: string;
+    iconUrl?: string;
+    priceScale?: number;
+  }
+  
+  type AdTradeMethodResp = {
+    iconUrlColor?: string;
+    identifier?: string;
+    payAccount?: string;
+    payBank?: string;
+    payId?: string;
+    paySubBank?: string;
+    payType?: string;
+    tradeMethodName?: string;
+  };
+  
+  interface TradeMethodCommissionRateVo {
+    commissionRate?: number;
+    tradeMethodIdentifier?: string;
+    tradeMethodName?: string;
+  }
+  
+  interface AdvertiserVo {
+    advConfirmTime?: number;
+    email?: string;
+    margin?: number;
+    marginUnit?: string;
+    mobile?: string;
+    monthFinishRate?: number;
+    monthOrderCount?: number;
+    nickName?: string;
+    orderCount?: number;
+    realName?: string;
+    registrationTime?: string;
+    tagIconUrls?: string[];
+    userNo?: string;
+    userType?: string;
+  }
+  
