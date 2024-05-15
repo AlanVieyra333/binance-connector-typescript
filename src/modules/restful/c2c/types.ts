@@ -1,22 +1,22 @@
-export interface CommonRet_CommisionRateOverview extends CommonPageRet {
-  data?: CommisionRateOverview;
+export interface CommonRet_CommissionRateOverview extends CommonPageRet {
+  data?: CommissionRateOverview;
 }
 
-export interface CommisionRateOverview {
-  assetRetList: CommisionRateOverviewAsset[];
+export interface CommissionRateOverview {
+  assetRetList: CommissionRateOverviewAsset[];
   userDiscountOffRateMaker: number;
   userDiscountOffRateTaker: number;
   userLevel: number;
 }
 
-export interface CommisionRateOverviewAsset {
+export interface CommissionRateOverviewAsset {
   asset: string;
   assetLogoUrl: string;
   assetName: string;
-  items: CommisionRateOverviewItem[];
+  items: CommissionRateOverviewItem[];
 }
 
-export interface CommisionRateOverviewItem {
+export interface CommissionRateOverviewItem {
   area: string;
   channel: string;
   fiat: string;

@@ -1,22 +1,22 @@
 import { AxiosProxyConfig } from 'axios';
 import WebSocketClient from 'ws';
 
-interface CommonRet_CommisionRateOverview extends CommonPageRet {
-    data?: CommisionRateOverview;
+interface CommonRet_CommissionRateOverview extends CommonPageRet {
+    data?: CommissionRateOverview;
 }
-interface CommisionRateOverview {
-    assetRetList: CommisionRateOverviewAsset[];
+interface CommissionRateOverview {
+    assetRetList: CommissionRateOverviewAsset[];
     userDiscountOffRateMaker: number;
     userDiscountOffRateTaker: number;
     userLevel: number;
 }
-interface CommisionRateOverviewAsset {
+interface CommissionRateOverviewAsset {
     asset: string;
     assetLogoUrl: string;
     assetName: string;
-    items: CommisionRateOverviewItem[];
+    items: CommissionRateOverviewItem[];
 }
-interface CommisionRateOverviewItem {
+interface CommissionRateOverviewItem {
     area: string;
     channel: string;
     fiat: string;
@@ -223,16 +223,16 @@ type types$a_AdTradeMethodResp = AdTradeMethodResp;
 type types$a_AdVisibleRetVo = AdVisibleRetVo;
 type types$a_AdvertiserVo = AdvertiserVo;
 type types$a_AssetDetail = AssetDetail;
-type types$a_CommisionRateOverview = CommisionRateOverview;
-type types$a_CommisionRateOverviewAsset = CommisionRateOverviewAsset;
-type types$a_CommisionRateOverviewItem = CommisionRateOverviewItem;
+type types$a_CommissionRateOverview = CommissionRateOverview;
+type types$a_CommissionRateOverviewAsset = CommissionRateOverviewAsset;
+type types$a_CommissionRateOverviewItem = CommissionRateOverviewItem;
 type types$a_CommonPageRet = CommonPageRet;
 type types$a_CommonPageRet_AdDetailResp = CommonPageRet_AdDetailResp;
 type types$a_CommonPageRet_AdSearchResp = CommonPageRet_AdSearchResp;
 type types$a_CommonPageRet_UserOrderHistory = CommonPageRet_UserOrderHistory;
 type types$a_CommonRet_AdDetailResp = CommonRet_AdDetailResp;
 type types$a_CommonRet_AdSearchResp = CommonRet_AdSearchResp;
-type types$a_CommonRet_CommisionRateOverview = CommonRet_CommisionRateOverview;
+type types$a_CommonRet_CommissionRateOverview = CommonRet_CommissionRateOverview;
 type types$a_FiatDetail = FiatDetail;
 type types$a_TradeMethodCommissionRateVo = TradeMethodCommissionRateVo;
 type types$a_UserOrderHistory = UserOrderHistory;
@@ -247,16 +247,16 @@ declare namespace types$a {
     types$a_AdVisibleRetVo as AdVisibleRetVo,
     types$a_AdvertiserVo as AdvertiserVo,
     types$a_AssetDetail as AssetDetail,
-    types$a_CommisionRateOverview as CommisionRateOverview,
-    types$a_CommisionRateOverviewAsset as CommisionRateOverviewAsset,
-    types$a_CommisionRateOverviewItem as CommisionRateOverviewItem,
+    types$a_CommissionRateOverview as CommissionRateOverview,
+    types$a_CommissionRateOverviewAsset as CommissionRateOverviewAsset,
+    types$a_CommissionRateOverviewItem as CommissionRateOverviewItem,
     types$a_CommonPageRet as CommonPageRet,
     types$a_CommonPageRet_AdDetailResp as CommonPageRet_AdDetailResp,
     types$a_CommonPageRet_AdSearchResp as CommonPageRet_AdSearchResp,
     types$a_CommonPageRet_UserOrderHistory as CommonPageRet_UserOrderHistory,
     types$a_CommonRet_AdDetailResp as CommonRet_AdDetailResp,
     types$a_CommonRet_AdSearchResp as CommonRet_AdSearchResp,
-    types$a_CommonRet_CommisionRateOverview as CommonRet_CommisionRateOverview,
+    types$a_CommonRet_CommissionRateOverview as CommonRet_CommissionRateOverview,
     types$a_FiatDetail as FiatDetail,
     types$a_TradeMethodCommissionRateVo as TradeMethodCommissionRateVo,
     types$a_UserOrderHistory as UserOrderHistory,
@@ -5134,7 +5134,7 @@ interface C2cMethods {
     listWithPagination(page: number, rows: number, options?: AdQueryByPageReq): Promise<CommonPageRet_AdDetailResp>;
     search(asset: string, fiat: string, page: number, rows: number, tradeType: string, options?: searchOptions): Promise<CommonPageRet_AdSearchResp>;
     listUserOrderHistory(options?: listUserOrderHistoryOptions): Promise<CommonPageRet_UserOrderHistory>;
-    commisionRateOverview(fiat: string): Promise<CommonRet_CommisionRateOverview>;
+    commissionRateOverview(fiat: string): Promise<CommonRet_CommissionRateOverview>;
     detailWithAdvertiser(advNo: string): Promise<CommonRet_AdSearchResp>;
 }
 

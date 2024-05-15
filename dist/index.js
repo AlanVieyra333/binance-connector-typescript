@@ -341,13 +341,13 @@ function mixinC2c(base) {
       return await this.makeRequest("GET", url);
     }
     /**
-    * Retrieve user order history with pagination {@link file://c2c-sapi-v7.1.pdf#40.commisionRateOverview}
+    * Retrieve user order history with pagination {@link file://c2c-sapi-v7.1.pdf#40.commissionRateOverview}
     *
     * @param {string} fiat - Fiat currency, e.g. MXN
     */
-    async commisionRateOverview(fiat) {
+    async commissionRateOverview(fiat) {
       validateRequiredParameters({ fiat });
-      const url = this.prepareSignedPath("/sapi/v1/c2c/commision-rate/overview");
+      const url = this.prepareSignedPath("/sapi/v1/c2c/commission-rate/overview");
       const data = Object.assign(
         {
           fiat
