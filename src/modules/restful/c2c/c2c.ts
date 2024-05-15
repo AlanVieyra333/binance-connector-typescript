@@ -9,6 +9,7 @@ import {
     listUserOrderHistoryOptions,
     searchOptions,
     CommonRet_AdSearchResp,
+    CommonRet_CommisionRateOverview,
 } from './types';
 import { C2cMethods } from './methods';
 
@@ -100,6 +101,23 @@ export function mixinC2c<T extends Constructor>(base: T): Constructor<C2cMethods
             );
             return await this.makeRequest('GET', url);
         }
+
+        /**
+        * Retrieve user order history with pagination {@link file://c2c-sapi-v7.1.pdf#40.commisionRateOverview}
+        *
+        * @param {string} fiat - Fiat currency, e.g. MXN
+        */
+        async commisionRateOverview(fiat: string): Promise<CommonRet_CommisionRateOverview> {
+            validateRequiredParameters({ fiat });
+            const url = this.prepareSignedPath('/sapi/v1/c2c/commision-rate/overview');
+            const data = Object.assign(
+                {
+                    fiat: fiat,
+                }
+            );
+            return await this.makeRequest('POST', url, data);
+        }
+
 
         /**
         * Get adv detail by number. (P2P API: https://p2p.binance.com/bapi)

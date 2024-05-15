@@ -1,3 +1,35 @@
+export interface CommonRet_CommisionRateOverview extends CommonPageRet {
+  data?: CommisionRateOverview;
+}
+
+export interface CommisionRateOverview {
+  assetRetList: CommisionRateOverviewAsset[];
+  userDiscountOffRateMaker: number;
+  userDiscountOffRateTaker: number;
+  userLevel: number;
+}
+
+export interface CommisionRateOverviewAsset {
+  asset: string;
+  assetLogoUrl: string;
+  assetName: string;
+  items: CommisionRateOverviewItem[];
+}
+
+export interface CommisionRateOverviewItem {
+  area: string;
+  channel: string;
+  fiat: string;
+  makerBuyBaseCommissionRate: number;
+  makerBuyCommissionRate: number;
+  makerSellBaseCommissionRate: number;
+  makerSellCommissionRate: number;
+  takerBuyBaseCommissionRate: number;
+  takerBuyCommissionRate: number;
+  takerSellBaseCommissionRate: number;
+  takerSellCommissionRate: number;
+}
+
 export interface CommonPageRet_AdSearchResp extends CommonPageRet {
   data?: AdSearchResp[];
 }
@@ -26,7 +58,7 @@ export interface CommonPageRet_UserOrderHistory extends CommonPageRet {
   data?: UserOrderHistory[];
 }
 
-interface UserOrderHistory {
+export interface UserOrderHistory {
   additionalKycVerify?: number;
   advNo?: string;
   advertisementRole?: string;
@@ -79,7 +111,7 @@ export interface CommonPageRet_AdDetailResp extends CommonPageRet {
   data?: AdDetailResp[];
 }
 
-interface CommonPageRet {
+export interface CommonPageRet {
   code?: string;
   data?: any;
   message?: string;
@@ -88,117 +120,116 @@ interface CommonPageRet {
 }
 
 export interface AdDetailResp {
-    advNo?: string;
-    advStatus?: number;
-    advUpdateTime?: string;
-    advVisibleRet?: AdVisibleRetVo;
-    asset?: string;
-    assetLogo?: string;
-    assetScale?: number;
-    assetVo?: AssetDetail;
-    autoReplyMsg?: string;
-    buyerBtcPositionLimit?: number;
-    buyerKycLimit?: number;
-    buyerRegDaysLimit?: number;
-    classify?: string;
-    commissionRate?: number;
-    createTime?: string;
-    currencyRate?: number;
-    dynamicMaxSingleTransAmount?: number;
-    dynamicMaxSingleTransQuantity?: number;
-    fiatScale?: number;
-    fiatSymbol?: string;
-    fiatUnit?: string;
-    fiatVo?: FiatDetail;
-    initAmount?: number;
-    isTradable?: boolean;
-    maxSingleTransAmount?: number;
-    maxSingleTransQuantity?: number;
-    minSingleTransAmount?: number;
-    minSingleTransQuantity?: number;
-    payTimeLimit?: number;
-    price?: number;
-    priceFloatingRatio?: number;
-    priceScale?: number;
-    priceType?: number;
-    rateFloatingRatio?: number;
-    remarks?: string;
-    surplusAmount?: number;
-    takerAdditionalKycRequired?: number;
-    tradableQuantity?: number;
-    tradeMethodCommissionRateVoList?: TradeMethodCommissionRateVo[];
-    tradeMethods?: AdTradeMethodResp[];
-    tradeType?: string;
-    userAllTradeCountMax?: number;
-    userAllTradeCountMin?: number;
-    userBuyTradeCountMax?: number;
-    userBuyTradeCountMin?: number;
-    userSellTradeCountMax?: number;
-    userSellTradeCountMin?: number;
-    userTradeCompleteCountMin?: number;
-    userTradeCompleteRateFilterTime?: number;
-    userTradeCompleteRateMin?: number;
-    userTradeCountFilterTime?: number;
-    userTradeType?: number;
-    userTradeVolumeAsset?: string;
-    userTradeVolumeFilterTime?: number;
-    userTradeVolumeMax?: number;
-    userTradeVolumeMin?: number;
-  }
-  
-  interface AdVisibleRetVo {
-    orderFlowVisible?: number;
-    surplusAmountVisible?: number;
-    userSetVisible?: number;
-  }
-  
-  interface AssetDetail {
-    asset?: string;
-    decimalScale?: number;
-    iconUrl?: string;
-    name?: string;
-  }
-  
-  interface FiatDetail {
-    countryCode?: string;
-    currencyCode?: string;
-    currencyScale?: number;
-    currencySymbol?: string;
-    iconUrl?: string;
-    priceScale?: number;
-  }
-  
-  type AdTradeMethodResp = {
-    iconUrlColor?: string;
-    identifier?: string;
-    payAccount?: string;
-    payBank?: string;
-    payId?: string;
-    paySubBank?: string;
-    payType?: string;
-    tradeMethodName?: string;
-  };
-  
-  interface TradeMethodCommissionRateVo {
-    commissionRate?: number;
-    tradeMethodIdentifier?: string;
-    tradeMethodName?: string;
-  }
-  
-  interface AdvertiserVo {
-    advConfirmTime?: number;
-    email?: string;
-    margin?: number;
-    marginUnit?: string;
-    mobile?: string;
-    monthFinishRate?: number;
-    monthOrderCount?: number;
-    nickName?: string;
-    orderCount?: number;
-    realName?: string;
-    registrationTime?: string;
-    tagIconUrls?: string[];
-    userNo?: string;
-    userType?: string;
-  }
-  
+  advNo?: string;
+  advStatus?: number;
+  advUpdateTime?: string;
+  advVisibleRet?: AdVisibleRetVo;
+  asset?: string;
+  assetLogo?: string;
+  assetScale?: number;
+  assetVo?: AssetDetail;
+  autoReplyMsg?: string;
+  buyerBtcPositionLimit?: number;
+  buyerKycLimit?: number;
+  buyerRegDaysLimit?: number;
+  classify?: string;
+  commissionRate?: number;
+  createTime?: string;
+  currencyRate?: number;
+  dynamicMaxSingleTransAmount?: number;
+  dynamicMaxSingleTransQuantity?: number;
+  fiatScale?: number;
+  fiatSymbol?: string;
+  fiatUnit?: string;
+  fiatVo?: FiatDetail;
+  initAmount?: number;
+  isTradable?: boolean;
+  maxSingleTransAmount?: number;
+  maxSingleTransQuantity?: number;
+  minSingleTransAmount?: number;
+  minSingleTransQuantity?: number;
+  payTimeLimit?: number;
+  price?: number;
+  priceFloatingRatio?: number;
+  priceScale?: number;
+  priceType?: number;
+  rateFloatingRatio?: number;
+  remarks?: string;
+  surplusAmount?: number;
+  takerAdditionalKycRequired?: number;
+  tradableQuantity?: number;
+  tradeMethodCommissionRateVoList?: TradeMethodCommissionRateVo[];
+  tradeMethods?: AdTradeMethodResp[];
+  tradeType?: string;
+  userAllTradeCountMax?: number;
+  userAllTradeCountMin?: number;
+  userBuyTradeCountMax?: number;
+  userBuyTradeCountMin?: number;
+  userSellTradeCountMax?: number;
+  userSellTradeCountMin?: number;
+  userTradeCompleteCountMin?: number;
+  userTradeCompleteRateFilterTime?: number;
+  userTradeCompleteRateMin?: number;
+  userTradeCountFilterTime?: number;
+  userTradeType?: number;
+  userTradeVolumeAsset?: string;
+  userTradeVolumeFilterTime?: number;
+  userTradeVolumeMax?: number;
+  userTradeVolumeMin?: number;
+}
+
+export interface AdVisibleRetVo {
+  orderFlowVisible?: number;
+  surplusAmountVisible?: number;
+  userSetVisible?: number;
+}
+
+export interface AssetDetail {
+  asset?: string;
+  decimalScale?: number;
+  iconUrl?: string;
+  name?: string;
+}
+
+export interface FiatDetail {
+  countryCode?: string;
+  currencyCode?: string;
+  currencyScale?: number;
+  currencySymbol?: string;
+  iconUrl?: string;
+  priceScale?: number;
+}
+
+export interface AdTradeMethodResp {
+  iconUrlColor?: string;
+  identifier?: string;
+  payAccount?: string;
+  payBank?: string;
+  payId?: string;
+  paySubBank?: string;
+  payType?: string;
+  tradeMethodName?: string;
+};
+
+export interface TradeMethodCommissionRateVo {
+  commissionRate?: number;
+  tradeMethodIdentifier?: string;
+  tradeMethodName?: string;
+}
+
+export interface AdvertiserVo {
+  advConfirmTime?: number;
+  email?: string;
+  margin?: number;
+  marginUnit?: string;
+  mobile?: string;
+  monthFinishRate?: number;
+  monthOrderCount?: number;
+  nickName?: string;
+  orderCount?: number;
+  realName?: string;
+  registrationTime?: string;
+  tagIconUrls?: string[];
+  userNo?: string;
+  userType?: string;
+}
