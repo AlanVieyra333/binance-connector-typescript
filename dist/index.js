@@ -1483,21 +1483,25 @@ function mixinMarket(base) {
     /**
      * Trading Day Ticker {@link https://binance-docs.github.io/apidocs/spot/en/#trading-day-ticker}
      * 
-     * @param {string} symbol - Trading symbol, e.g. BNBUSDT
      * @param {object} [options]
-     * @param {string} [options.symbols] - The maximum number of symbols allowed in a request is 100.
+     * @param {string} [options.symbol] - Trading symbol, e.g. BNBUSDT
+     * @param {string[]} [options.symbols] - The maximum number of symbols allowed in a request is 100.
      * @param {string} [options.timeZone] - Default: 0 (UTC)
      * @param {string} [options.type] - Supported values: FULL or MINI., If none provided, the default is FULL
      */
-    async tradingDayTicker(symbol, options) {
-      validateRequiredParameters({ symbol });
+    async tradingDayTicker(options) {
+      if (options.symbol && options.symbols)
+        throw new Error("Symbol and Symbols cannot be sent together.");
+      if (options && options.symbol && Object.prototype.hasOwnProperty.call(options, "symbol")) {
+        options.symbol = options.symbol.toUpperCase();
+      }
+      if (options && options.symbols && Object.prototype.hasOwnProperty.call(options, "symbols")) {
+        options.symbols = options.symbols.map((symbol) => symbol.toUpperCase());
+      }
       const url = this.preparePath(
         "/api/v3/ticker/tradingDay",
         Object.assign(
-          options ? options : {},
-          {
-            symbol: symbol.toUpperCase()
-          }
+          options ? options : {}
         )
       );
       return await this.makeRequest("GET", url);
@@ -4206,10 +4210,10 @@ function mixinWsMarket(base) {
      * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#exchange-information}
      */
     exchangeInfo(options) {
-      if (Object.prototype.hasOwnProperty.call(options, "symbol") && options && options.symbol) {
+      if (options && options.symbol && Object.prototype.hasOwnProperty.call(options, "symbol")) {
         options.symbol = options.symbol.toUpperCase();
       }
-      if (Object.prototype.hasOwnProperty.call(options, "symbols") && options && options.symbols) {
+      if (options && options.symbols && Object.prototype.hasOwnProperty.call(options, "symbols")) {
         options.symbols = options.symbols.map((symbol) => symbol.toUpperCase());
       }
       this.sendMessage("exchangeInfo", options);
@@ -4814,37 +4818,37 @@ function WebsocketBase(base) {
     }
     initConnect(url) {
       const ws = new import_ws.default(url);
-      console.info(`Sending Websocket connection to: ${url}`);
+      this.logger.info(`Sending Websocket connection to: ${url}`);
       this.wsConnection.ws = ws;
       this.wsConnection.closeInitiated = false;
       ws.on("open", () => {
-        console.info(`Connected to the Websocket Server: ${url}`);
+        this.logger.info(`Connected to the Websocket Server: ${url}`);
         this.callbacks.open && this.callbacks.open(this);
       });
       ws.on("message", (data) => {
         this.callbacks.message && this.callbacks.message(data.toString());
       });
       ws.on("ping", () => {
-        console.info("Received PING from server");
+        this.logger.info("Received PING from server");
         this.callbacks.ping && this.callbacks.ping();
         ws.pong();
-        console.info("Responded PONG to server's PING message");
+        this.logger.info("Responded PONG to server's PING message");
       });
       ws.on("pong", () => {
-        console.info("Received PONG from server");
+        this.logger.info("Received PONG from server");
         this.callbacks.pong && this.callbacks.pong();
       });
       ws.on("error", (err) => {
-        console.error("Received error from server");
+        this.logger.error("Received error from server");
         this.callbacks.error && this.callbacks.error();
-        console.error(err);
+        this.logger.error(err);
       });
       ws.on("close", (closeEventCode, reason) => {
         if (!this.wsConnection.closeInitiated) {
           this.callbacks.close && this.callbacks.close();
-          console.warn(`Connection close due to ${closeEventCode}: ${reason}.`);
+          this.logger.warn(`Connection close due to ${closeEventCode}: ${reason}.`);
           setTimeout(() => {
-            console.debug("Reconnect to the server.");
+            this.logger.debug("Reconnect to the server.");
             this.initConnect(url);
           }, this.reconnectDelay);
         } else {
@@ -4859,14 +4863,14 @@ function WebsocketBase(base) {
      */
     disconnect() {
       if (!this.isConnected())
-        console.warn("No connection to close.");
+        this.logger.warn("No connection to close.");
       else {
         this.wsConnection.closeInitiated = true;
         if (this.wsConnection.ws)
           this.wsConnection.ws.close();
         else
           throw new Error("Websocket Client not set");
-        console.info("Disconnected with Binance Websocket Server");
+        this.logger.info("Disconnected with Binance Websocket Server");
       }
     }
     /**
@@ -4874,9 +4878,9 @@ function WebsocketBase(base) {
      */
     pingServer() {
       if (!this.isConnected())
-        console.warn("Ping only can be sent when connection is ready.");
+        this.logger.warn("Ping only can be sent when connection is ready.");
       else {
-        console.info("Send PING to the Websocket Server");
+        this.logger.info("Send PING to the Websocket Server");
         if (this.wsConnection.ws)
           this.wsConnection.ws.ping();
         else
@@ -4885,7 +4889,7 @@ function WebsocketBase(base) {
     }
     send(payload) {
       if (!this.isConnected())
-        console.warn("Send only can be sent when connection is ready.");
+        this.logger.warn("Send only can be sent when connection is ready.");
       else {
         if (this.wsConnection.ws)
           this.wsConnection.ws.send(payload);
@@ -5090,9 +5094,66 @@ function mixinWsStream(base) {
   };
 }
 
+// src/helpers/logger.ts
+var Logger = class _Logger {
+  constructor() {
+    this.minLogLevel = "info" /* INFO */;
+    this.levelsOrder = [
+      "" /* NONE */,
+      "debug" /* DEBUG */,
+      "info" /* INFO */,
+      "warn" /* WARN */,
+      "error" /* ERROR */
+    ];
+  }
+  static getInstance() {
+    if (!_Logger.instance) {
+      _Logger.instance = new _Logger();
+    }
+    return _Logger.instance;
+  }
+  setMinLogLevel(level) {
+    if (!this.isValidLogLevel(level)) {
+      throw new Error(`Invalid log level: ${level}`);
+    }
+    this.minLogLevel = level;
+  }
+  isValidLogLevel(level) {
+    return this.levelsOrder.includes(level);
+  }
+  log(level, ...message) {
+    if (level === "" /* NONE */ || !this.allowLevelLog(level)) {
+      return;
+    }
+    const timestamp = (/* @__PURE__ */ new Date()).toISOString();
+    console[level](`[${timestamp}] [${level.toUpperCase()}]`, ...message);
+  }
+  allowLevelLog(level) {
+    if (!this.isValidLogLevel(level)) {
+      throw new Error(`Invalid log level: ${level}`);
+    }
+    const currentLevelIndex = this.levelsOrder.indexOf(level);
+    const minLevelIndex = this.levelsOrder.indexOf(this.minLogLevel);
+    return currentLevelIndex >= minLevelIndex;
+  }
+  debug(...message) {
+    this.log("debug" /* DEBUG */, ...message);
+  }
+  info(...message) {
+    this.log("info" /* INFO */, ...message);
+  }
+  warn(...message) {
+    this.log("warn" /* WARN */, ...message);
+  }
+  error(...message) {
+    this.log("error" /* ERROR */, ...message);
+  }
+};
+
 // src/setters/mixinBase.ts
 var SpotBase = mixinC2c(mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixinSubAccount(mixinTrade(mixinWallet(class {
   constructor(apiKey, apiSecret, options = {}) {
+    this.logger = Logger.getInstance();
     this.apiKey = apiKey;
     this.apiSecret = apiSecret;
     this.baseURL = options.baseURL || "https://api.binance.com";
@@ -5149,6 +5210,7 @@ var SpotBase = mixinC2c(mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixi
 }))))))));
 var WebsocketFeaturesBase = mixinWsAccount(mixinWsMarket(mixinWsTrade(mixinWsUserData(WebsocketBase(class {
   constructor(apiKey, apiSecret, options) {
+    this.logger = Logger.getInstance();
     this.apiKey = apiKey;
     this.apiSecret = apiSecret;
     this.wsURL = options && options.wsURL ? options.wsURL : "wss://ws-api.binance.com:443/ws-api/v3";
@@ -5159,6 +5221,7 @@ var WebsocketFeaturesBase = mixinWsAccount(mixinWsMarket(mixinWsTrade(mixinWsUse
 })))));
 var WebsocketStreamFeaturesBase = mixinWsStream(WebsocketBase(class {
   constructor(options = {}) {
+    this.logger = Logger.getInstance();
     this.wsURL = options.wsURL || "wss://ws-api.binance.com:443/ws-api/v3";
     this.callbacks = options.callbacks || {};
     this.reconnectDelay = options.reconnectDelay || 5e3;
@@ -5189,7 +5252,7 @@ var WebsocketAPI = class extends WebsocketFeaturesBase {
   }
   sendMessageWithAPIKey(method, options = {}) {
     if (!this.isConnected()) {
-      console.error("Not connected");
+      this.logger.error("Not connected");
       return;
     }
     const id = options.id || randomString();
@@ -5200,12 +5263,12 @@ var WebsocketAPI = class extends WebsocketFeaturesBase {
       method,
       params: removeEmptyValue(options)
     };
-    console.debug("Send message to Binance Websocket API Server:", payload);
+    this.logger.debug("Send message to Binance Websocket API Server:", payload);
     this.send(JSON.stringify(payload));
   }
   sendMessage(method, options = {}) {
     if (!this.isConnected()) {
-      console.error("Not connected");
+      this.logger.error("Not connected");
       return;
     }
     const id = options.id && /^[0-9a-f]{32}$/.test(options.id) ? options.id : randomString();
@@ -5215,12 +5278,12 @@ var WebsocketAPI = class extends WebsocketFeaturesBase {
       method,
       params: removeEmptyValue(options)
     };
-    console.debug("Send message to Binance Websocket API Server:", payload);
+    this.logger.debug("Send message to Binance Websocket API Server:", payload);
     this.send(JSON.stringify(payload));
   }
   sendSignatureMessage(method, options = {}) {
     if (!this.isConnected()) {
-      console.error("Not connected");
+      this.logger.error("Not connected");
       return;
     }
     const id = options.id || randomString();
@@ -5235,7 +5298,7 @@ var WebsocketAPI = class extends WebsocketFeaturesBase {
       method,
       params: options
     };
-    console.debug("Send message to Binance Websocket API Server:", payload);
+    this.logger.debug("Send message to Binance Websocket API Server:", payload);
     this.send(JSON.stringify(payload));
   }
 };
@@ -5256,6 +5319,8 @@ var WebsocketStream = class extends WebsocketStreamFeaturesBase {
   }
   subscribe(stream) {
     if (!this.isConnected()) {
+      if (Array.isArray(stream))
+        stream = stream.toString().replace(",", "/");
       const url = this._prepareURL(stream);
       this.initConnect(url);
     } else {
@@ -5267,13 +5332,13 @@ var WebsocketStream = class extends WebsocketStreamFeaturesBase {
         params: stream,
         id: Date.now()
       };
-      console.info("SUBSCRIBE", payload);
+      this.logger.info("SUBSCRIBE", payload);
       this.send(JSON.stringify(payload));
     }
   }
   unsubscribe(stream) {
     if (!this.isConnected()) {
-      console.warn("Not connected");
+      this.logger.warn("Not connected");
     } else {
       if (!Array.isArray(stream)) {
         stream = [stream];
@@ -5283,7 +5348,7 @@ var WebsocketStream = class extends WebsocketStreamFeaturesBase {
         params: stream,
         id: Date.now()
       };
-      console.info("UNSUBSCRIBE", payload);
+      this.logger.info("UNSUBSCRIBE", payload);
       this.send(JSON.stringify(payload));
     }
   }

@@ -1544,6 +1544,7 @@ interface BorrowRepayRecordsRow {
 
 type types$9_BorrowRepayRecordsRow = BorrowRepayRecordsRow;
 type types$9_adjustCrossMarginMaxLeverageResponse = adjustCrossMarginMaxLeverageResponse;
+type types$9_crossMarginCollateralRatioCollaterals = crossMarginCollateralRatioCollaterals;
 type types$9_crossMarginCollateralRatioResponse = crossMarginCollateralRatioResponse;
 type types$9_disableIsolatedMarginAccountOptions = disableIsolatedMarginAccountOptions;
 type types$9_disableIsolatedMarginAccountResponse = disableIsolatedMarginAccountResponse;
@@ -1561,33 +1562,44 @@ type types$9_getBorrowRepayRecordsOptions = getBorrowRepayRecordsOptions;
 type types$9_getBorrowRepayRecordsResponse = getBorrowRepayRecordsResponse;
 type types$9_getCrossMarginAccountDetailsOptions = getCrossMarginAccountDetailsOptions;
 type types$9_getCrossMarginAccountDetailsResponse = getCrossMarginAccountDetailsResponse;
+type types$9_getCrossMarginAccountDetailsUserassets = getCrossMarginAccountDetailsUserassets;
 type types$9_getCrossMarginFeeDataOptions = getCrossMarginFeeDataOptions;
 type types$9_getCrossMarginFeeDataResponse = getCrossMarginFeeDataResponse;
 type types$9_getCrossMarginTransferHistoryOptions = getCrossMarginTransferHistoryOptions;
 type types$9_getCrossMarginTransferHistoryResponse = getCrossMarginTransferHistoryResponse;
+type types$9_getCrossMarginTransferHistoryRows = getCrossMarginTransferHistoryRows;
 type types$9_getCurrentMarginOrderCountUsageOptions = getCurrentMarginOrderCountUsageOptions;
 type types$9_getCurrentMarginOrderCountUsageResponse = getCurrentMarginOrderCountUsageResponse;
 type types$9_getEnabledIsolatedMarginAccountLimitOptions = getEnabledIsolatedMarginAccountLimitOptions;
 type types$9_getEnabledIsolatedMarginAccountLimitResponse = getEnabledIsolatedMarginAccountLimitResponse;
 type types$9_getForceLiquidationRecordOptions = getForceLiquidationRecordOptions;
 type types$9_getForceLiquidationRecordResponse = getForceLiquidationRecordResponse;
+type types$9_getForceLiquidationRecordRows = getForceLiquidationRecordRows;
 type types$9_getFutureHoulyInterestRateResponse = getFutureHoulyInterestRateResponse;
 type types$9_getInterestHistoryOptions = getInterestHistoryOptions;
 type types$9_getInterestHistoryResponse = getInterestHistoryResponse;
+type types$9_getInterestHistoryRows = getInterestHistoryRows;
+type types$9_getIsolatedMarginAccountInfoAssets = getIsolatedMarginAccountInfoAssets;
+type types$9_getIsolatedMarginAccountInfoBaseasset = getIsolatedMarginAccountInfoBaseasset;
 type types$9_getIsolatedMarginAccountInfoOptions = getIsolatedMarginAccountInfoOptions;
+type types$9_getIsolatedMarginAccountInfoQuoteasset = getIsolatedMarginAccountInfoQuoteasset;
 type types$9_getIsolatedMarginAccountInfoResponse = getIsolatedMarginAccountInfoResponse;
+type types$9_getIsolatedMarginFeeDataData = getIsolatedMarginFeeDataData;
 type types$9_getIsolatedMarginFeeDataOptions = getIsolatedMarginFeeDataOptions;
 type types$9_getIsolatedMarginFeeDataResponse = getIsolatedMarginFeeDataResponse;
 type types$9_getIsolatedMarginTierDataOptions = getIsolatedMarginTierDataOptions;
 type types$9_getIsolatedMarginTierDataResponse = getIsolatedMarginTierDataResponse;
 type types$9_getLeverageBracketResponse = getLeverageBracketResponse;
 type types$9_getMarginAccountAllOcoOptions = getMarginAccountAllOcoOptions;
+type types$9_getMarginAccountAllOcoOrders = getMarginAccountAllOcoOrders;
 type types$9_getMarginAccountAllOcoResponse = getMarginAccountAllOcoResponse;
 type types$9_getMarginAccountAllOrdersOptions = getMarginAccountAllOrdersOptions;
 type types$9_getMarginAccountAllOrdersResponse = getMarginAccountAllOrdersResponse;
 type types$9_getMarginAccountOcoOptions = getMarginAccountOcoOptions;
+type types$9_getMarginAccountOcoOrders = getMarginAccountOcoOrders;
 type types$9_getMarginAccountOcoResponse = getMarginAccountOcoResponse;
 type types$9_getMarginAccountOpenOcoOptions = getMarginAccountOpenOcoOptions;
+type types$9_getMarginAccountOpenOcoOrders = getMarginAccountOpenOcoOrders;
 type types$9_getMarginAccountOpenOcoResponse = getMarginAccountOpenOcoResponse;
 type types$9_getMarginAccountOpenOrdersOptions = getMarginAccountOpenOrdersOptions;
 type types$9_getMarginAccountOpenOrdersResponse = getMarginAccountOpenOrdersResponse;
@@ -1606,6 +1618,7 @@ type types$9_getSmallLiabilityExchangeCoinListOptions = getSmallLiabilityExchang
 type types$9_getSmallLiabilityExchangeCoinListResponse = getSmallLiabilityExchangeCoinListResponse;
 type types$9_getSmallLiabilityExchangeHistoryOptions = getSmallLiabilityExchangeHistoryOptions;
 type types$9_getSmallLiabilityExchangeHistoryResponse = getSmallLiabilityExchangeHistoryResponse;
+type types$9_getSmallLiabilityExchangeHistoryRows = getSmallLiabilityExchangeHistoryRows;
 type types$9_getSummaryOfMarginAccountOptions = getSummaryOfMarginAccountOptions;
 type types$9_getSummaryOfMarginAccountResponse = getSummaryOfMarginAccountResponse;
 type types$9_getTokensOrSymbolsDelistScheduleForCrossMarginAndIsolatedMarginOptions = getTokensOrSymbolsDelistScheduleForCrossMarginAndIsolatedMarginOptions;
@@ -1616,11 +1629,16 @@ type types$9_marginAccountBorrowRepayResponse = marginAccountBorrowRepayResponse
 type types$9_marginAccountCancelAllOpenOrdersOnASymbolOptions = marginAccountCancelAllOpenOrdersOnASymbolOptions;
 type types$9_marginAccountCancelAllOpenOrdersOnASymbolResponse = marginAccountCancelAllOpenOrdersOnASymbolResponse;
 type types$9_marginAccountCancelOcoOptions = marginAccountCancelOcoOptions;
+type types$9_marginAccountCancelOcoOrderReports = marginAccountCancelOcoOrderReports;
+type types$9_marginAccountCancelOcoOrders = marginAccountCancelOcoOrders;
 type types$9_marginAccountCancelOcoResponse = marginAccountCancelOcoResponse;
 type types$9_marginAccountCancelOrderOptions = marginAccountCancelOrderOptions;
 type types$9_marginAccountCancelOrderResponse = marginAccountCancelOrderResponse;
 type types$9_marginAccountNewOcoOptions = marginAccountNewOcoOptions;
+type types$9_marginAccountNewOcoOrderreports = marginAccountNewOcoOrderreports;
+type types$9_marginAccountNewOcoOrders = marginAccountNewOcoOrders;
 type types$9_marginAccountNewOcoResponse = marginAccountNewOcoResponse;
+type types$9_marginAccountNewOrderFills = marginAccountNewOrderFills;
 type types$9_marginAccountNewOrderOptions = marginAccountNewOrderOptions;
 type types$9_marginAccountNewOrderResponse = marginAccountNewOrderResponse;
 type types$9_marginInterestRateHistoryOptions = marginInterestRateHistoryOptions;
@@ -1635,6 +1653,7 @@ declare namespace types$9 {
   export {
     types$9_BorrowRepayRecordsRow as BorrowRepayRecordsRow,
     types$9_adjustCrossMarginMaxLeverageResponse as adjustCrossMarginMaxLeverageResponse,
+    types$9_crossMarginCollateralRatioCollaterals as crossMarginCollateralRatioCollaterals,
     types$9_crossMarginCollateralRatioResponse as crossMarginCollateralRatioResponse,
     types$9_disableIsolatedMarginAccountOptions as disableIsolatedMarginAccountOptions,
     types$9_disableIsolatedMarginAccountResponse as disableIsolatedMarginAccountResponse,
@@ -1652,33 +1671,44 @@ declare namespace types$9 {
     types$9_getBorrowRepayRecordsResponse as getBorrowRepayRecordsResponse,
     types$9_getCrossMarginAccountDetailsOptions as getCrossMarginAccountDetailsOptions,
     types$9_getCrossMarginAccountDetailsResponse as getCrossMarginAccountDetailsResponse,
+    types$9_getCrossMarginAccountDetailsUserassets as getCrossMarginAccountDetailsUserassets,
     types$9_getCrossMarginFeeDataOptions as getCrossMarginFeeDataOptions,
     types$9_getCrossMarginFeeDataResponse as getCrossMarginFeeDataResponse,
     types$9_getCrossMarginTransferHistoryOptions as getCrossMarginTransferHistoryOptions,
     types$9_getCrossMarginTransferHistoryResponse as getCrossMarginTransferHistoryResponse,
+    types$9_getCrossMarginTransferHistoryRows as getCrossMarginTransferHistoryRows,
     types$9_getCurrentMarginOrderCountUsageOptions as getCurrentMarginOrderCountUsageOptions,
     types$9_getCurrentMarginOrderCountUsageResponse as getCurrentMarginOrderCountUsageResponse,
     types$9_getEnabledIsolatedMarginAccountLimitOptions as getEnabledIsolatedMarginAccountLimitOptions,
     types$9_getEnabledIsolatedMarginAccountLimitResponse as getEnabledIsolatedMarginAccountLimitResponse,
     types$9_getForceLiquidationRecordOptions as getForceLiquidationRecordOptions,
     types$9_getForceLiquidationRecordResponse as getForceLiquidationRecordResponse,
+    types$9_getForceLiquidationRecordRows as getForceLiquidationRecordRows,
     types$9_getFutureHoulyInterestRateResponse as getFutureHoulyInterestRateResponse,
     types$9_getInterestHistoryOptions as getInterestHistoryOptions,
     types$9_getInterestHistoryResponse as getInterestHistoryResponse,
+    types$9_getInterestHistoryRows as getInterestHistoryRows,
+    types$9_getIsolatedMarginAccountInfoAssets as getIsolatedMarginAccountInfoAssets,
+    types$9_getIsolatedMarginAccountInfoBaseasset as getIsolatedMarginAccountInfoBaseasset,
     types$9_getIsolatedMarginAccountInfoOptions as getIsolatedMarginAccountInfoOptions,
+    types$9_getIsolatedMarginAccountInfoQuoteasset as getIsolatedMarginAccountInfoQuoteasset,
     types$9_getIsolatedMarginAccountInfoResponse as getIsolatedMarginAccountInfoResponse,
+    types$9_getIsolatedMarginFeeDataData as getIsolatedMarginFeeDataData,
     types$9_getIsolatedMarginFeeDataOptions as getIsolatedMarginFeeDataOptions,
     types$9_getIsolatedMarginFeeDataResponse as getIsolatedMarginFeeDataResponse,
     types$9_getIsolatedMarginTierDataOptions as getIsolatedMarginTierDataOptions,
     types$9_getIsolatedMarginTierDataResponse as getIsolatedMarginTierDataResponse,
     types$9_getLeverageBracketResponse as getLeverageBracketResponse,
     types$9_getMarginAccountAllOcoOptions as getMarginAccountAllOcoOptions,
+    types$9_getMarginAccountAllOcoOrders as getMarginAccountAllOcoOrders,
     types$9_getMarginAccountAllOcoResponse as getMarginAccountAllOcoResponse,
     types$9_getMarginAccountAllOrdersOptions as getMarginAccountAllOrdersOptions,
     types$9_getMarginAccountAllOrdersResponse as getMarginAccountAllOrdersResponse,
     types$9_getMarginAccountOcoOptions as getMarginAccountOcoOptions,
+    types$9_getMarginAccountOcoOrders as getMarginAccountOcoOrders,
     types$9_getMarginAccountOcoResponse as getMarginAccountOcoResponse,
     types$9_getMarginAccountOpenOcoOptions as getMarginAccountOpenOcoOptions,
+    types$9_getMarginAccountOpenOcoOrders as getMarginAccountOpenOcoOrders,
     types$9_getMarginAccountOpenOcoResponse as getMarginAccountOpenOcoResponse,
     types$9_getMarginAccountOpenOrdersOptions as getMarginAccountOpenOrdersOptions,
     types$9_getMarginAccountOpenOrdersResponse as getMarginAccountOpenOrdersResponse,
@@ -1697,6 +1727,7 @@ declare namespace types$9 {
     types$9_getSmallLiabilityExchangeCoinListResponse as getSmallLiabilityExchangeCoinListResponse,
     types$9_getSmallLiabilityExchangeHistoryOptions as getSmallLiabilityExchangeHistoryOptions,
     types$9_getSmallLiabilityExchangeHistoryResponse as getSmallLiabilityExchangeHistoryResponse,
+    types$9_getSmallLiabilityExchangeHistoryRows as getSmallLiabilityExchangeHistoryRows,
     types$9_getSummaryOfMarginAccountOptions as getSummaryOfMarginAccountOptions,
     types$9_getSummaryOfMarginAccountResponse as getSummaryOfMarginAccountResponse,
     types$9_getTokensOrSymbolsDelistScheduleForCrossMarginAndIsolatedMarginOptions as getTokensOrSymbolsDelistScheduleForCrossMarginAndIsolatedMarginOptions,
@@ -1707,11 +1738,16 @@ declare namespace types$9 {
     types$9_marginAccountCancelAllOpenOrdersOnASymbolOptions as marginAccountCancelAllOpenOrdersOnASymbolOptions,
     types$9_marginAccountCancelAllOpenOrdersOnASymbolResponse as marginAccountCancelAllOpenOrdersOnASymbolResponse,
     types$9_marginAccountCancelOcoOptions as marginAccountCancelOcoOptions,
+    types$9_marginAccountCancelOcoOrderReports as marginAccountCancelOcoOrderReports,
+    types$9_marginAccountCancelOcoOrders as marginAccountCancelOcoOrders,
     types$9_marginAccountCancelOcoResponse as marginAccountCancelOcoResponse,
     types$9_marginAccountCancelOrderOptions as marginAccountCancelOrderOptions,
     types$9_marginAccountCancelOrderResponse as marginAccountCancelOrderResponse,
     types$9_marginAccountNewOcoOptions as marginAccountNewOcoOptions,
+    types$9_marginAccountNewOcoOrderreports as marginAccountNewOcoOrderreports,
+    types$9_marginAccountNewOcoOrders as marginAccountNewOcoOrders,
     types$9_marginAccountNewOcoResponse as marginAccountNewOcoResponse,
+    types$9_marginAccountNewOrderFills as marginAccountNewOrderFills,
     types$9_marginAccountNewOrderOptions as marginAccountNewOrderOptions,
     types$9_marginAccountNewOrderResponse as marginAccountNewOrderResponse,
     types$9_marginInterestRateHistoryOptions as marginInterestRateHistoryOptions,
@@ -1994,7 +2030,8 @@ interface trailingDelta {
     maxTrailingBelowDelta: number;
 }
 interface tradingDayTickerOptions {
-    symbols?: string;
+    symbol?: string;
+    symbols?: string[];
     timeZone?: string;
     type?: 'FULL' | 'MINI';
 }
@@ -2021,13 +2058,31 @@ type types$8_compressedAggregateTradesListOptions = compressedAggregateTradesLis
 type types$8_compressedAggregateTradesListResponse = compressedAggregateTradesListResponse;
 type types$8_currentAveragePriceResponse = currentAveragePriceResponse;
 type types$8_exchangeInformationOptions = exchangeInformationOptions;
+type types$8_exchangeInformationRatelimits = exchangeInformationRatelimits;
 type types$8_exchangeInformationResponse = exchangeInformationResponse;
+type types$8_exchangeInformationSymbols = exchangeInformationSymbols;
+type types$8_exchangeMaxNumAlgoOrders = exchangeMaxNumAlgoOrders;
+type types$8_exchangeMaxNumIcebergOrders = exchangeMaxNumIcebergOrders;
+type types$8_exchangeMaxNumOrders = exchangeMaxNumOrders;
+type types$8_exchangefilters = exchangefilters;
+type types$8_iceBergParts = iceBergParts;
 type types$8_klineCandlestickDataOptions = klineCandlestickDataOptions;
 type types$8_klineCandlestickDataResponse = klineCandlestickDataResponse;
+type types$8_lotSize = lotSize;
+type types$8_marketLotSize = marketLotSize;
+type types$8_maxNumAlgoOrders = maxNumAlgoOrders;
+type types$8_maxNumIcebergOrders = maxNumIcebergOrders;
+type types$8_maxNumOrders = maxNumOrders;
+type types$8_maxPosition = maxPosition;
+type types$8_minNotional = minNotional;
+type types$8_notional = notional;
 type types$8_oldTradeLookupOptions = oldTradeLookupOptions;
 type types$8_oldTradeLookupResponse = oldTradeLookupResponse;
 type types$8_orderBookOptions = orderBookOptions;
 type types$8_orderBookResponse = orderBookResponse;
+type types$8_percentPrice = percentPrice;
+type types$8_percentPriceBySide = percentPriceBySide;
+type types$8_priceFilter = priceFilter;
 type types$8_recentTradesListOptions = recentTradesListOptions;
 type types$8_recentTradesListResponse = recentTradesListResponse;
 type types$8_rollingWindowPriceChangeStatisticsOptions = rollingWindowPriceChangeStatisticsOptions;
@@ -2039,6 +2094,7 @@ type types$8_symbolPriceTickerResponse = symbolPriceTickerResponse;
 type types$8_ticker24hrResponse = ticker24hrResponse;
 type types$8_tradingDayTickerOptions = tradingDayTickerOptions;
 type types$8_tradingDayTickerResponse = tradingDayTickerResponse;
+type types$8_trailingDelta = trailingDelta;
 type types$8_uiklinesOptions = uiklinesOptions;
 type types$8_uiklinesResponse = uiklinesResponse;
 declare namespace types$8 {
@@ -2048,13 +2104,31 @@ declare namespace types$8 {
     types$8_compressedAggregateTradesListResponse as compressedAggregateTradesListResponse,
     types$8_currentAveragePriceResponse as currentAveragePriceResponse,
     types$8_exchangeInformationOptions as exchangeInformationOptions,
+    types$8_exchangeInformationRatelimits as exchangeInformationRatelimits,
     types$8_exchangeInformationResponse as exchangeInformationResponse,
+    types$8_exchangeInformationSymbols as exchangeInformationSymbols,
+    types$8_exchangeMaxNumAlgoOrders as exchangeMaxNumAlgoOrders,
+    types$8_exchangeMaxNumIcebergOrders as exchangeMaxNumIcebergOrders,
+    types$8_exchangeMaxNumOrders as exchangeMaxNumOrders,
+    types$8_exchangefilters as exchangefilters,
+    types$8_iceBergParts as iceBergParts,
     types$8_klineCandlestickDataOptions as klineCandlestickDataOptions,
     types$8_klineCandlestickDataResponse as klineCandlestickDataResponse,
+    types$8_lotSize as lotSize,
+    types$8_marketLotSize as marketLotSize,
+    types$8_maxNumAlgoOrders as maxNumAlgoOrders,
+    types$8_maxNumIcebergOrders as maxNumIcebergOrders,
+    types$8_maxNumOrders as maxNumOrders,
+    types$8_maxPosition as maxPosition,
+    types$8_minNotional as minNotional,
+    types$8_notional as notional,
     types$8_oldTradeLookupOptions as oldTradeLookupOptions,
     types$8_oldTradeLookupResponse as oldTradeLookupResponse,
     types$8_orderBookOptions as orderBookOptions,
     types$8_orderBookResponse as orderBookResponse,
+    types$8_percentPrice as percentPrice,
+    types$8_percentPriceBySide as percentPriceBySide,
+    types$8_priceFilter as priceFilter,
     types$8_recentTradesListOptions as recentTradesListOptions,
     types$8_recentTradesListResponse as recentTradesListResponse,
     types$8_rollingWindowPriceChangeStatisticsOptions as rollingWindowPriceChangeStatisticsOptions,
@@ -2067,6 +2141,7 @@ declare namespace types$8 {
     types$8_ticker24hrResponse as ticker24hrResponse,
     types$8_tradingDayTickerOptions as tradingDayTickerOptions,
     types$8_tradingDayTickerResponse as tradingDayTickerResponse,
+    types$8_trailingDelta as trailingDelta,
     types$8_uiklinesOptions as uiklinesOptions,
     types$8_uiklinesResponse as uiklinesResponse,
   };
@@ -2457,36 +2532,50 @@ interface getCollateralRecordRows {
 
 type types$7_getCollateralRecordOptions = getCollateralRecordOptions;
 type types$7_getCollateralRecordResponse = getCollateralRecordResponse;
+type types$7_getCollateralRecordRows = getCollateralRecordRows;
 type types$7_getFlexiblePersonalLeftQuotaOptions = getFlexiblePersonalLeftQuotaOptions;
 type types$7_getFlexiblePersonalLeftQuotaResponse = getFlexiblePersonalLeftQuotaResponse;
 type types$7_getFlexibleProductPositionOptions = getFlexibleProductPositionOptions;
 type types$7_getFlexibleProductPositionResponse = getFlexibleProductPositionResponse;
+type types$7_getFlexibleProductPositionRows = getFlexibleProductPositionRows;
 type types$7_getFlexibleRedemptionRecordOptions = getFlexibleRedemptionRecordOptions;
 type types$7_getFlexibleRedemptionRecordResponse = getFlexibleRedemptionRecordResponse;
+type types$7_getFlexibleRedemptionRecordRows = getFlexibleRedemptionRecordRows;
 type types$7_getFlexibleRewardsHistoryOptions = getFlexibleRewardsHistoryOptions;
 type types$7_getFlexibleRewardsHistoryResponse = getFlexibleRewardsHistoryResponse;
+type types$7_getFlexibleRewardsHistoryRows = getFlexibleRewardsHistoryRows;
 type types$7_getFlexibleSubscriptionPreviewOptions = getFlexibleSubscriptionPreviewOptions;
 type types$7_getFlexibleSubscriptionPreviewResponse = getFlexibleSubscriptionPreviewResponse;
 type types$7_getFlexibleSubscriptionRecordOptions = getFlexibleSubscriptionRecordOptions;
 type types$7_getFlexibleSubscriptionRecordResponse = getFlexibleSubscriptionRecordResponse;
+type types$7_getFlexibleSubscriptionRecordRows = getFlexibleSubscriptionRecordRows;
 type types$7_getLockedPersonalLeftQuotaOptions = getLockedPersonalLeftQuotaOptions;
 type types$7_getLockedPersonalLeftQuotaResponse = getLockedPersonalLeftQuotaResponse;
 type types$7_getLockedProductPositionOptions = getLockedProductPositionOptions;
 type types$7_getLockedProductPositionResponse = getLockedProductPositionResponse;
+type types$7_getLockedProductPositionRows = getLockedProductPositionRows;
 type types$7_getLockedRedemptionRecordOptions = getLockedRedemptionRecordOptions;
 type types$7_getLockedRedemptionRecordResponse = getLockedRedemptionRecordResponse;
+type types$7_getLockedRedemptionRecordRows = getLockedRedemptionRecordRows;
 type types$7_getLockedRewardsHistoryOptions = getLockedRewardsHistoryOptions;
 type types$7_getLockedRewardsHistoryResponse = getLockedRewardsHistoryResponse;
+type types$7_getLockedRewardsHistoryRows = getLockedRewardsHistoryRows;
 type types$7_getLockedSubscriptionPreviewOptions = getLockedSubscriptionPreviewOptions;
 type types$7_getLockedSubscriptionPreviewResponse = getLockedSubscriptionPreviewResponse;
 type types$7_getLockedSubscriptionRecordOptions = getLockedSubscriptionRecordOptions;
 type types$7_getLockedSubscriptionRecordResponse = getLockedSubscriptionRecordResponse;
+type types$7_getLockedSubscriptionRecordRows = getLockedSubscriptionRecordRows;
 type types$7_getRateHistoryOptions = getRateHistoryOptions;
 type types$7_getRateHistoryResponse = getRateHistoryResponse;
+type types$7_getRateHistoryRows = getRateHistoryRows;
 type types$7_getSimpleEarnFlexibleProductListOptions = getSimpleEarnFlexibleProductListOptions;
 type types$7_getSimpleEarnFlexibleProductListResponse = getSimpleEarnFlexibleProductListResponse;
+type types$7_getSimpleEarnFlexibleProductListRows = getSimpleEarnFlexibleProductListRows;
 type types$7_getSimpleEarnLockedProductListOptions = getSimpleEarnLockedProductListOptions;
 type types$7_getSimpleEarnLockedProductListResponse = getSimpleEarnLockedProductListResponse;
+type types$7_getSimpleEarnLockedProductListRows = getSimpleEarnLockedProductListRows;
+type types$7_lockedProductDetails = lockedProductDetails;
+type types$7_lockedProductQuota = lockedProductQuota;
 type types$7_redeemFlexibleProductOptions = redeemFlexibleProductOptions;
 type types$7_redeemFlexibleProductResponse = redeemFlexibleProductResponse;
 type types$7_redeemLockedProductOptions = redeemLockedProductOptions;
@@ -2501,40 +2590,55 @@ type types$7_subscribeFlexibleProductOptions = subscribeFlexibleProductOptions;
 type types$7_subscribeFlexibleProductResponse = subscribeFlexibleProductResponse;
 type types$7_subscribeLockedProductOptions = subscribeLockedProductOptions;
 type types$7_subscribeLockedProductResponse = subscribeLockedProductResponse;
+type types$7_tierAnnualPercentageRate = tierAnnualPercentageRate;
 declare namespace types$7 {
   export {
     types$7_getCollateralRecordOptions as getCollateralRecordOptions,
     types$7_getCollateralRecordResponse as getCollateralRecordResponse,
+    types$7_getCollateralRecordRows as getCollateralRecordRows,
     types$7_getFlexiblePersonalLeftQuotaOptions as getFlexiblePersonalLeftQuotaOptions,
     types$7_getFlexiblePersonalLeftQuotaResponse as getFlexiblePersonalLeftQuotaResponse,
     types$7_getFlexibleProductPositionOptions as getFlexibleProductPositionOptions,
     types$7_getFlexibleProductPositionResponse as getFlexibleProductPositionResponse,
+    types$7_getFlexibleProductPositionRows as getFlexibleProductPositionRows,
     types$7_getFlexibleRedemptionRecordOptions as getFlexibleRedemptionRecordOptions,
     types$7_getFlexibleRedemptionRecordResponse as getFlexibleRedemptionRecordResponse,
+    types$7_getFlexibleRedemptionRecordRows as getFlexibleRedemptionRecordRows,
     types$7_getFlexibleRewardsHistoryOptions as getFlexibleRewardsHistoryOptions,
     types$7_getFlexibleRewardsHistoryResponse as getFlexibleRewardsHistoryResponse,
+    types$7_getFlexibleRewardsHistoryRows as getFlexibleRewardsHistoryRows,
     types$7_getFlexibleSubscriptionPreviewOptions as getFlexibleSubscriptionPreviewOptions,
     types$7_getFlexibleSubscriptionPreviewResponse as getFlexibleSubscriptionPreviewResponse,
     types$7_getFlexibleSubscriptionRecordOptions as getFlexibleSubscriptionRecordOptions,
     types$7_getFlexibleSubscriptionRecordResponse as getFlexibleSubscriptionRecordResponse,
+    types$7_getFlexibleSubscriptionRecordRows as getFlexibleSubscriptionRecordRows,
     types$7_getLockedPersonalLeftQuotaOptions as getLockedPersonalLeftQuotaOptions,
     types$7_getLockedPersonalLeftQuotaResponse as getLockedPersonalLeftQuotaResponse,
     types$7_getLockedProductPositionOptions as getLockedProductPositionOptions,
     types$7_getLockedProductPositionResponse as getLockedProductPositionResponse,
+    types$7_getLockedProductPositionRows as getLockedProductPositionRows,
     types$7_getLockedRedemptionRecordOptions as getLockedRedemptionRecordOptions,
     types$7_getLockedRedemptionRecordResponse as getLockedRedemptionRecordResponse,
+    types$7_getLockedRedemptionRecordRows as getLockedRedemptionRecordRows,
     types$7_getLockedRewardsHistoryOptions as getLockedRewardsHistoryOptions,
     types$7_getLockedRewardsHistoryResponse as getLockedRewardsHistoryResponse,
+    types$7_getLockedRewardsHistoryRows as getLockedRewardsHistoryRows,
     types$7_getLockedSubscriptionPreviewOptions as getLockedSubscriptionPreviewOptions,
     types$7_getLockedSubscriptionPreviewResponse as getLockedSubscriptionPreviewResponse,
     types$7_getLockedSubscriptionRecordOptions as getLockedSubscriptionRecordOptions,
     types$7_getLockedSubscriptionRecordResponse as getLockedSubscriptionRecordResponse,
+    types$7_getLockedSubscriptionRecordRows as getLockedSubscriptionRecordRows,
     types$7_getRateHistoryOptions as getRateHistoryOptions,
     types$7_getRateHistoryResponse as getRateHistoryResponse,
+    types$7_getRateHistoryRows as getRateHistoryRows,
     types$7_getSimpleEarnFlexibleProductListOptions as getSimpleEarnFlexibleProductListOptions,
     types$7_getSimpleEarnFlexibleProductListResponse as getSimpleEarnFlexibleProductListResponse,
+    types$7_getSimpleEarnFlexibleProductListRows as getSimpleEarnFlexibleProductListRows,
     types$7_getSimpleEarnLockedProductListOptions as getSimpleEarnLockedProductListOptions,
     types$7_getSimpleEarnLockedProductListResponse as getSimpleEarnLockedProductListResponse,
+    types$7_getSimpleEarnLockedProductListRows as getSimpleEarnLockedProductListRows,
+    types$7_lockedProductDetails as lockedProductDetails,
+    types$7_lockedProductQuota as lockedProductQuota,
     types$7_redeemFlexibleProductOptions as redeemFlexibleProductOptions,
     types$7_redeemFlexibleProductResponse as redeemFlexibleProductResponse,
     types$7_redeemLockedProductOptions as redeemLockedProductOptions,
@@ -2549,6 +2653,7 @@ declare namespace types$7 {
     types$7_subscribeFlexibleProductResponse as subscribeFlexibleProductResponse,
     types$7_subscribeLockedProductOptions as subscribeLockedProductOptions,
     types$7_subscribeLockedProductResponse as subscribeLockedProductResponse,
+    types$7_tierAnnualPercentageRate as tierAnnualPercentageRate,
   };
 }
 
@@ -3229,8 +3334,11 @@ type types$5_deleteIpListForASubAccountApiKeyOptions = deleteIpListForASubAccoun
 type types$5_deleteIpListForASubAccountApiKeyResponse = deleteIpListForASubAccountApiKeyResponse;
 type types$5_depositAssetsIntoTheManagedSubAccountOptions = depositAssetsIntoTheManagedSubAccountOptions;
 type types$5_depositAssetsIntoTheManagedSubAccountResponse = depositAssetsIntoTheManagedSubAccountResponse;
+type types$5_detailOnSubAccountFuturesAccountAssets = detailOnSubAccountFuturesAccountAssets;
 type types$5_detailOnSubAccountFuturesAccountOptions = detailOnSubAccountFuturesAccountOptions;
 type types$5_detailOnSubAccountFuturesAccountResponse = detailOnSubAccountFuturesAccountResponse;
+type types$5_detailOnSubAccountFuturesAccountV2Assets = detailOnSubAccountFuturesAccountV2Assets;
+type types$5_detailOnSubAccountFuturesAccountV2Futureaccountresp = detailOnSubAccountFuturesAccountV2Futureaccountresp;
 type types$5_detailOnSubAccountMarginAccountOptions = detailOnSubAccountMarginAccountOptions;
 type types$5_detailOnSubAccountMarginAccountResponse = detailOnSubAccountMarginAccountResponse;
 type types$5_enableFuturesForSubAccountOptions = enableFuturesForSubAccountOptions;
@@ -3241,6 +3349,11 @@ type types$5_enableMarginForSubAccountOptions = enableMarginForSubAccountOptions
 type types$5_enableMarginForSubAccountResponse = enableMarginForSubAccountResponse;
 type types$5_enableOptionsForSubAccountOptions = enableOptionsForSubAccountOptions;
 type types$5_enableOptionsForSubAccountResponse = enableOptionsForSubAccountResponse;
+type types$5_futurePositionRiskVos = futurePositionRiskVos;
+type types$5_futuresAssetDetailsSnapshotData = futuresAssetDetailsSnapshotData;
+type types$5_futuresAssetDetailsSnapshotDataAssets = futuresAssetDetailsSnapshotDataAssets;
+type types$5_futuresAssetDetailsSnapshotDataPosition = futuresAssetDetailsSnapshotDataPosition;
+type types$5_futuresAssetDetailsSnapshotVos = futuresAssetDetailsSnapshotVos;
 type types$5_futuresPositionriskOfSubAccountOptions = futuresPositionriskOfSubAccountOptions;
 type types$5_futuresPositionriskOfSubAccountResponse = futuresPositionriskOfSubAccountResponse;
 type types$5_futuresPositionriskOfSubAccountV2Options = futuresPositionriskOfSubAccountV2Options;
@@ -3265,6 +3378,8 @@ type types$5_getManagedSubAccountTransferLogForTradeSubOptions = getManagedSubAc
 type types$5_getManagedSubAccountTransferLogForTradeSubResponse = getManagedSubAccountTransferLogForTradeSubResponse;
 type types$5_getManagedSubAccountTransferLogOptions = getManagedSubAccountTransferLogOptions;
 type types$5_getManagedSubAccountTransferLogResponse = getManagedSubAccountTransferLogResponse;
+type types$5_getSubAccountAssetsBalances = getSubAccountAssetsBalances;
+type types$5_getSubAccountAssetsForMasterAccountBalances = getSubAccountAssetsForMasterAccountBalances;
 type types$5_getSubAccountAssetsForMasterAccountOptions = getSubAccountAssetsForMasterAccountOptions;
 type types$5_getSubAccountAssetsForMasterAccountResponse = getSubAccountAssetsForMasterAccountResponse;
 type types$5_getSubAccountAssetsOptions = getSubAccountAssetsOptions;
@@ -3273,18 +3388,28 @@ type types$5_getSubAccountDepositAddressOptions = getSubAccountDepositAddressOpt
 type types$5_getSubAccountDepositAddressResponse = getSubAccountDepositAddressResponse;
 type types$5_getSubAccountFuturesAssetTransferHistoryOptions = getSubAccountFuturesAssetTransferHistoryOptions;
 type types$5_getSubAccountFuturesAssetTransferHistoryResponse = getSubAccountFuturesAssetTransferHistoryResponse;
+type types$5_getSubAccountFuturesAssetTransferHistoryTransfers = getSubAccountFuturesAssetTransferHistoryTransfers;
 type types$5_getSubAccountListOptions = getSubAccountListOptions;
 type types$5_getSubAccountListResponse = getSubAccountListResponse;
+type types$5_getSubAccountListSubAccounts = getSubAccountListSubAccounts;
 type types$5_getSubAccountSpotAssetTransferHistoryOptions = getSubAccountSpotAssetTransferHistoryOptions;
 type types$5_getSubAccountSpotAssetTransferHistoryResponse = getSubAccountSpotAssetTransferHistoryResponse;
 type types$5_getSubAccountSpotAssetsSummaryOptions = getSubAccountSpotAssetsSummaryOptions;
 type types$5_getSubAccountSpotAssetsSummaryResponse = getSubAccountSpotAssetsSummaryResponse;
+type types$5_getSubAccountSpotAssetsSummarySpotSubUserAssetBtcVoList = getSubAccountSpotAssetsSummarySpotSubUserAssetBtcVoList;
 type types$5_getSubAccountTransactionStatisticsForMasterAccountOptions = getSubAccountTransactionStatisticsForMasterAccountOptions;
 type types$5_getSubAccountTransactionStatisticsForMasterAccountResponse = getSubAccountTransactionStatisticsForMasterAccountResponse;
 type types$5_getUniversalTransferHistoryOptions = getUniversalTransferHistoryOptions;
 type types$5_getUniversalTransferHistoryResponse = getUniversalTransferHistoryResponse;
+type types$5_managedSubAccountSnapshotData = managedSubAccountSnapshotData;
+type types$5_managerSubTransferHistoryVos = managerSubTransferHistoryVos;
+type types$5_managerSubUserInfoVoList = managerSubUserInfoVoList;
+type types$5_marginTradeCoeffVo = marginTradeCoeffVo;
 type types$5_marginTransferForSubAccountOptions = marginTransferForSubAccountOptions;
 type types$5_marginTransferForSubAccountResponse = marginTransferForSubAccountResponse;
+type types$5_marginUserAssetVoList = marginUserAssetVoList;
+type types$5_resultUniversalTransferHistoryResult = resultUniversalTransferHistoryResult;
+type types$5_snapshotVos = snapshotVos;
 type types$5_subAccountDepositHistoryOptions = subAccountDepositHistoryOptions;
 type types$5_subAccountDepositHistoryResponse = subAccountDepositHistoryResponse;
 type types$5_subAccountFuturesAssetTransferOptions = subAccountFuturesAssetTransferOptions;
@@ -3295,10 +3420,15 @@ type types$5_subAccountTransferHistoryOptions = subAccountTransferHistoryOptions
 type types$5_subAccountTransferHistoryResponse = subAccountTransferHistoryResponse;
 type types$5_summaryOfSubAccountFuturesAccountOptions = summaryOfSubAccountFuturesAccountOptions;
 type types$5_summaryOfSubAccountFuturesAccountResponse = summaryOfSubAccountFuturesAccountResponse;
+type types$5_summaryOfSubAccountFuturesAccountSubAccountlist = summaryOfSubAccountFuturesAccountSubAccountlist;
+type types$5_summaryOfSubAccountFuturesAccountV2Futureaccountsummaryresp = summaryOfSubAccountFuturesAccountV2Futureaccountsummaryresp;
 type types$5_summaryOfSubAccountFuturesAccountV2Options = summaryOfSubAccountFuturesAccountV2Options;
 type types$5_summaryOfSubAccountFuturesAccountV2Response = summaryOfSubAccountFuturesAccountV2Response;
+type types$5_summaryOfSubAccountFuturesAccountV2Subaccountlist = summaryOfSubAccountFuturesAccountV2Subaccountlist;
 type types$5_summaryOfSubAccountMarginAccountOptions = summaryOfSubAccountMarginAccountOptions;
 type types$5_summaryOfSubAccountMarginAccountResponse = summaryOfSubAccountMarginAccountResponse;
+type types$5_summaryOfSubAccountMarginAccountSubAccountlist = summaryOfSubAccountMarginAccountSubAccountlist;
+type types$5_tradeInfoVos = tradeInfoVos;
 type types$5_transferForSubAccountOptions = transferForSubAccountOptions;
 type types$5_transferForSubAccountResponse = transferForSubAccountResponse;
 type types$5_transferToMasterOptions = transferToMasterOptions;
@@ -3309,6 +3439,7 @@ type types$5_universalTransferOptions = universalTransferOptions;
 type types$5_universalTransferResponse = universalTransferResponse;
 type types$5_updateIpRestrictionForSubAccountApiKeyOptions = updateIpRestrictionForSubAccountApiKeyOptions;
 type types$5_updateIpRestrictionForSubAccountApiKeyResponse = updateIpRestrictionForSubAccountApiKeyResponse;
+type types$5_userAssets = userAssets;
 type types$5_withdrawlAssetsFromTheManagedSubAccountOptions = withdrawlAssetsFromTheManagedSubAccountOptions;
 type types$5_withdrawlAssetsFromTheManagedSubAccountResponse = withdrawlAssetsFromTheManagedSubAccountResponse;
 declare namespace types$5 {
@@ -3319,8 +3450,11 @@ declare namespace types$5 {
     types$5_deleteIpListForASubAccountApiKeyResponse as deleteIpListForASubAccountApiKeyResponse,
     types$5_depositAssetsIntoTheManagedSubAccountOptions as depositAssetsIntoTheManagedSubAccountOptions,
     types$5_depositAssetsIntoTheManagedSubAccountResponse as depositAssetsIntoTheManagedSubAccountResponse,
+    types$5_detailOnSubAccountFuturesAccountAssets as detailOnSubAccountFuturesAccountAssets,
     types$5_detailOnSubAccountFuturesAccountOptions as detailOnSubAccountFuturesAccountOptions,
     types$5_detailOnSubAccountFuturesAccountResponse as detailOnSubAccountFuturesAccountResponse,
+    types$5_detailOnSubAccountFuturesAccountV2Assets as detailOnSubAccountFuturesAccountV2Assets,
+    types$5_detailOnSubAccountFuturesAccountV2Futureaccountresp as detailOnSubAccountFuturesAccountV2Futureaccountresp,
     types$5_detailOnSubAccountMarginAccountOptions as detailOnSubAccountMarginAccountOptions,
     types$5_detailOnSubAccountMarginAccountResponse as detailOnSubAccountMarginAccountResponse,
     types$5_enableFuturesForSubAccountOptions as enableFuturesForSubAccountOptions,
@@ -3331,6 +3465,11 @@ declare namespace types$5 {
     types$5_enableMarginForSubAccountResponse as enableMarginForSubAccountResponse,
     types$5_enableOptionsForSubAccountOptions as enableOptionsForSubAccountOptions,
     types$5_enableOptionsForSubAccountResponse as enableOptionsForSubAccountResponse,
+    types$5_futurePositionRiskVos as futurePositionRiskVos,
+    types$5_futuresAssetDetailsSnapshotData as futuresAssetDetailsSnapshotData,
+    types$5_futuresAssetDetailsSnapshotDataAssets as futuresAssetDetailsSnapshotDataAssets,
+    types$5_futuresAssetDetailsSnapshotDataPosition as futuresAssetDetailsSnapshotDataPosition,
+    types$5_futuresAssetDetailsSnapshotVos as futuresAssetDetailsSnapshotVos,
     types$5_futuresPositionriskOfSubAccountOptions as futuresPositionriskOfSubAccountOptions,
     types$5_futuresPositionriskOfSubAccountResponse as futuresPositionriskOfSubAccountResponse,
     types$5_futuresPositionriskOfSubAccountV2Options as futuresPositionriskOfSubAccountV2Options,
@@ -3355,6 +3494,8 @@ declare namespace types$5 {
     types$5_getManagedSubAccountTransferLogForTradeSubResponse as getManagedSubAccountTransferLogForTradeSubResponse,
     types$5_getManagedSubAccountTransferLogOptions as getManagedSubAccountTransferLogOptions,
     types$5_getManagedSubAccountTransferLogResponse as getManagedSubAccountTransferLogResponse,
+    types$5_getSubAccountAssetsBalances as getSubAccountAssetsBalances,
+    types$5_getSubAccountAssetsForMasterAccountBalances as getSubAccountAssetsForMasterAccountBalances,
     types$5_getSubAccountAssetsForMasterAccountOptions as getSubAccountAssetsForMasterAccountOptions,
     types$5_getSubAccountAssetsForMasterAccountResponse as getSubAccountAssetsForMasterAccountResponse,
     types$5_getSubAccountAssetsOptions as getSubAccountAssetsOptions,
@@ -3363,18 +3504,28 @@ declare namespace types$5 {
     types$5_getSubAccountDepositAddressResponse as getSubAccountDepositAddressResponse,
     types$5_getSubAccountFuturesAssetTransferHistoryOptions as getSubAccountFuturesAssetTransferHistoryOptions,
     types$5_getSubAccountFuturesAssetTransferHistoryResponse as getSubAccountFuturesAssetTransferHistoryResponse,
+    types$5_getSubAccountFuturesAssetTransferHistoryTransfers as getSubAccountFuturesAssetTransferHistoryTransfers,
     types$5_getSubAccountListOptions as getSubAccountListOptions,
     types$5_getSubAccountListResponse as getSubAccountListResponse,
+    types$5_getSubAccountListSubAccounts as getSubAccountListSubAccounts,
     types$5_getSubAccountSpotAssetTransferHistoryOptions as getSubAccountSpotAssetTransferHistoryOptions,
     types$5_getSubAccountSpotAssetTransferHistoryResponse as getSubAccountSpotAssetTransferHistoryResponse,
     types$5_getSubAccountSpotAssetsSummaryOptions as getSubAccountSpotAssetsSummaryOptions,
     types$5_getSubAccountSpotAssetsSummaryResponse as getSubAccountSpotAssetsSummaryResponse,
+    types$5_getSubAccountSpotAssetsSummarySpotSubUserAssetBtcVoList as getSubAccountSpotAssetsSummarySpotSubUserAssetBtcVoList,
     types$5_getSubAccountTransactionStatisticsForMasterAccountOptions as getSubAccountTransactionStatisticsForMasterAccountOptions,
     types$5_getSubAccountTransactionStatisticsForMasterAccountResponse as getSubAccountTransactionStatisticsForMasterAccountResponse,
     types$5_getUniversalTransferHistoryOptions as getUniversalTransferHistoryOptions,
     types$5_getUniversalTransferHistoryResponse as getUniversalTransferHistoryResponse,
+    types$5_managedSubAccountSnapshotData as managedSubAccountSnapshotData,
+    types$5_managerSubTransferHistoryVos as managerSubTransferHistoryVos,
+    types$5_managerSubUserInfoVoList as managerSubUserInfoVoList,
+    types$5_marginTradeCoeffVo as marginTradeCoeffVo,
     types$5_marginTransferForSubAccountOptions as marginTransferForSubAccountOptions,
     types$5_marginTransferForSubAccountResponse as marginTransferForSubAccountResponse,
+    types$5_marginUserAssetVoList as marginUserAssetVoList,
+    types$5_resultUniversalTransferHistoryResult as resultUniversalTransferHistoryResult,
+    types$5_snapshotVos as snapshotVos,
     types$5_subAccountDepositHistoryOptions as subAccountDepositHistoryOptions,
     types$5_subAccountDepositHistoryResponse as subAccountDepositHistoryResponse,
     types$5_subAccountFuturesAssetTransferOptions as subAccountFuturesAssetTransferOptions,
@@ -3385,10 +3536,15 @@ declare namespace types$5 {
     types$5_subAccountTransferHistoryResponse as subAccountTransferHistoryResponse,
     types$5_summaryOfSubAccountFuturesAccountOptions as summaryOfSubAccountFuturesAccountOptions,
     types$5_summaryOfSubAccountFuturesAccountResponse as summaryOfSubAccountFuturesAccountResponse,
+    types$5_summaryOfSubAccountFuturesAccountSubAccountlist as summaryOfSubAccountFuturesAccountSubAccountlist,
+    types$5_summaryOfSubAccountFuturesAccountV2Futureaccountsummaryresp as summaryOfSubAccountFuturesAccountV2Futureaccountsummaryresp,
     types$5_summaryOfSubAccountFuturesAccountV2Options as summaryOfSubAccountFuturesAccountV2Options,
     types$5_summaryOfSubAccountFuturesAccountV2Response as summaryOfSubAccountFuturesAccountV2Response,
+    types$5_summaryOfSubAccountFuturesAccountV2Subaccountlist as summaryOfSubAccountFuturesAccountV2Subaccountlist,
     types$5_summaryOfSubAccountMarginAccountOptions as summaryOfSubAccountMarginAccountOptions,
     types$5_summaryOfSubAccountMarginAccountResponse as summaryOfSubAccountMarginAccountResponse,
+    types$5_summaryOfSubAccountMarginAccountSubAccountlist as summaryOfSubAccountMarginAccountSubAccountlist,
+    types$5_tradeInfoVos as tradeInfoVos,
     types$5_transferForSubAccountOptions as transferForSubAccountOptions,
     types$5_transferForSubAccountResponse as transferForSubAccountResponse,
     types$5_transferToMasterOptions as transferToMasterOptions,
@@ -3399,6 +3555,7 @@ declare namespace types$5 {
     types$5_universalTransferResponse as universalTransferResponse,
     types$5_updateIpRestrictionForSubAccountApiKeyOptions as updateIpRestrictionForSubAccountApiKeyOptions,
     types$5_updateIpRestrictionForSubAccountApiKeyResponse as updateIpRestrictionForSubAccountApiKeyResponse,
+    types$5_userAssets as userAssets,
     types$5_withdrawlAssetsFromTheManagedSubAccountOptions as withdrawlAssetsFromTheManagedSubAccountOptions,
     types$5_withdrawlAssetsFromTheManagedSubAccountResponse as withdrawlAssetsFromTheManagedSubAccountResponse,
   };
@@ -3944,6 +4101,8 @@ interface getCommissionRatesResponse {
     discount: discount;
 }
 
+type types$4_accountInformationBalances = accountInformationBalances;
+type types$4_accountInformationCommissionrates = accountInformationCommissionrates;
 type types$4_accountInformationOptions = accountInformationOptions;
 type types$4_accountInformationResponse = accountInformationResponse;
 type types$4_accountTradeListOptions = accountTradeListOptions;
@@ -3957,13 +4116,16 @@ type types$4_cancelAnExistingOrderAndSendANewOrderOptions = cancelAnExistingOrde
 type types$4_cancelAnExistingOrderAndSendANewOrderResponse = cancelAnExistingOrderAndSendANewOrderResponse;
 type types$4_cancelOcoOptions = cancelOcoOptions;
 type types$4_cancelOcoOrderReports = cancelOcoOrderReports;
+type types$4_cancelOcoOrders = cancelOcoOrders;
 type types$4_cancelOcoResponse = cancelOcoResponse;
 type types$4_cancelOrderResponse = cancelOrderResponse;
 type types$4_commissionParams = commissionParams;
 type types$4_currentOpenOrdersOptions = currentOpenOrdersOptions;
 type types$4_currentOpenOrdersResponse = currentOpenOrdersResponse;
 type types$4_discount = discount;
+type types$4_fill = fill;
 type types$4_getAllOcoOptions = getAllOcoOptions;
+type types$4_getAllOcoOrders = getAllOcoOrders;
 type types$4_getAllOcoResponse = getAllOcoResponse;
 type types$4_getAllocationsOptions = getAllocationsOptions;
 type types$4_getAllocationsResponse = getAllocationsResponse;
@@ -3971,14 +4133,17 @@ type types$4_getCommissionRatesResponse = getCommissionRatesResponse;
 type types$4_getCurrentOrderCountUsageOptions = getCurrentOrderCountUsageOptions;
 type types$4_getCurrentOrderCountUsageResponse = getCurrentOrderCountUsageResponse;
 type types$4_getOcoOptions = getOcoOptions;
+type types$4_getOcoOrders = getOcoOrders;
 type types$4_getOcoResponse = getOcoResponse;
 type types$4_getOpenOcoOptions = getOpenOcoOptions;
+type types$4_getOpenOcoOrders = getOpenOcoOrders;
 type types$4_getOpenOcoResponse = getOpenOcoResponse;
 type types$4_getOrderResponse = getOrderResponse;
 type types$4_getPreventedMatchesOptions = getPreventedMatchesOptions;
 type types$4_getPreventedMatchesResponse = getPreventedMatchesResponse;
 type types$4_newOcoOptions = newOcoOptions;
 type types$4_newOcoOrderReports = newOcoOrderReports;
+type types$4_newOcoOrders = newOcoOrders;
 type types$4_newOcoResponse = newOcoResponse;
 type types$4_newOrderResponse = newOrderResponse;
 type types$4_newOrderSORResponse = newOrderSORResponse;
@@ -3986,6 +4151,8 @@ type types$4_testNewOrderResponse = testNewOrderResponse;
 type types$4_testNewOrderSOROptions = testNewOrderSOROptions;
 declare namespace types$4 {
   export {
+    types$4_accountInformationBalances as accountInformationBalances,
+    types$4_accountInformationCommissionrates as accountInformationCommissionrates,
     types$4_accountInformationOptions as accountInformationOptions,
     types$4_accountInformationResponse as accountInformationResponse,
     types$4_accountTradeListOptions as accountTradeListOptions,
@@ -3999,6 +4166,7 @@ declare namespace types$4 {
     types$4_cancelAnExistingOrderAndSendANewOrderResponse as cancelAnExistingOrderAndSendANewOrderResponse,
     types$4_cancelOcoOptions as cancelOcoOptions,
     types$4_cancelOcoOrderReports as cancelOcoOrderReports,
+    types$4_cancelOcoOrders as cancelOcoOrders,
     types$4_cancelOcoResponse as cancelOcoResponse,
     cancelOrderOptions$1 as cancelOrderOptions,
     types$4_cancelOrderResponse as cancelOrderResponse,
@@ -4006,7 +4174,9 @@ declare namespace types$4 {
     types$4_currentOpenOrdersOptions as currentOpenOrdersOptions,
     types$4_currentOpenOrdersResponse as currentOpenOrdersResponse,
     types$4_discount as discount,
+    types$4_fill as fill,
     types$4_getAllOcoOptions as getAllOcoOptions,
+    types$4_getAllOcoOrders as getAllOcoOrders,
     types$4_getAllOcoResponse as getAllOcoResponse,
     types$4_getAllocationsOptions as getAllocationsOptions,
     types$4_getAllocationsResponse as getAllocationsResponse,
@@ -4014,8 +4184,10 @@ declare namespace types$4 {
     types$4_getCurrentOrderCountUsageOptions as getCurrentOrderCountUsageOptions,
     types$4_getCurrentOrderCountUsageResponse as getCurrentOrderCountUsageResponse,
     types$4_getOcoOptions as getOcoOptions,
+    types$4_getOcoOrders as getOcoOrders,
     types$4_getOcoResponse as getOcoResponse,
     types$4_getOpenOcoOptions as getOpenOcoOptions,
+    types$4_getOpenOcoOrders as getOpenOcoOrders,
     types$4_getOpenOcoResponse as getOpenOcoResponse,
     getOrderOptions$1 as getOrderOptions,
     types$4_getOrderResponse as getOrderResponse,
@@ -4023,6 +4195,7 @@ declare namespace types$4 {
     types$4_getPreventedMatchesResponse as getPreventedMatchesResponse,
     types$4_newOcoOptions as newOcoOptions,
     types$4_newOcoOrderReports as newOcoOrderReports,
+    types$4_newOcoOrders as newOcoOrders,
     types$4_newOcoResponse as newOcoResponse,
     newOrderOptions$1 as newOrderOptions,
     types$4_newOrderResponse as newOrderResponse,
@@ -4462,20 +4635,28 @@ interface oneClickArrivalDepositApplyResponse {
     success: boolean;
 }
 
+type types$3_accountApiTradingStatusData = accountApiTradingStatusData;
 type types$3_accountApiTradingStatusOptions = accountApiTradingStatusOptions;
 type types$3_accountApiTradingStatusResponse = accountApiTradingStatusResponse;
+type types$3_accountApiTradingStatusTriggercondition = accountApiTradingStatusTriggercondition;
 type types$3_accountStatusOptions = accountStatusOptions;
 type types$3_accountStatusResponse = accountStatusResponse;
+type types$3_allCoinsInformationNetworklist = allCoinsInformationNetworklist;
 type types$3_allCoinsInformationOptions = allCoinsInformationOptions;
 type types$3_allCoinsInformationResponse = allCoinsInformationResponse;
+type types$3_assetDetail = assetDetail;
 type types$3_assetDetailOptions = assetDetailOptions;
 type types$3_assetDetailResponse = assetDetailResponse;
 type types$3_assetDividendRecordOptions = assetDividendRecordOptions;
 type types$3_assetDividendRecordResponse = assetDividendRecordResponse;
+type types$3_assetDividendRecordRows = assetDividendRecordRows;
 type types$3_convertTransferOptions = convertTransferOptions;
 type types$3_convertTransferResponse = convertTransferResponse;
+type types$3_dailyAccountSnapshotBalances = dailyAccountSnapshotBalances;
+type types$3_dailyAccountSnapshotData = dailyAccountSnapshotData;
 type types$3_dailyAccountSnapshotOptions = dailyAccountSnapshotOptions;
 type types$3_dailyAccountSnapshotResponse = dailyAccountSnapshotResponse;
+type types$3_dailyAccountSnapshotSnapshotvos = dailyAccountSnapshotSnapshotvos;
 type types$3_depositAddressOptions = depositAddressOptions;
 type types$3_depositAddressResponse = depositAddressResponse;
 type types$3_depositHistoryOptions = depositHistoryOptions;
@@ -4484,21 +4665,28 @@ type types$3_disableFastWithdrawSwitchOptions = disableFastWithdrawSwitchOptions
 type types$3_disableFastWithdrawSwitchResponse = disableFastWithdrawSwitchResponse;
 type types$3_dustTransferOptions = dustTransferOptions;
 type types$3_dustTransferResponse = dustTransferResponse;
+type types$3_dustTransferTransferResult = dustTransferTransferResult;
 type types$3_dustlogOptions = dustlogOptions;
 type types$3_dustlogResponse = dustlogResponse;
+type types$3_dustlogUserassetdribbletdetails = dustlogUserassetdribbletdetails;
+type types$3_dustlogUserassetdribblets = dustlogUserassetdribblets;
 type types$3_enableFastWithdrawSwitchOptions = enableFastWithdrawSwitchOptions;
 type types$3_enableFastWithdrawSwitchResponse = enableFastWithdrawSwitchResponse;
 type types$3_fundingWalletOptions = fundingWalletOptions;
 type types$3_fundingWalletResponse = fundingWalletResponse;
 type types$3_getApiKeyPermissionOptions = getApiKeyPermissionOptions;
 type types$3_getApiKeyPermissionResponse = getApiKeyPermissionResponse;
+type types$3_getAssetsThatCanBeConvertedIntoBnbDetails = getAssetsThatCanBeConvertedIntoBnbDetails;
 type types$3_getAssetsThatCanBeConvertedIntoBnbOptions = getAssetsThatCanBeConvertedIntoBnbOptions;
 type types$3_getAssetsThatCanBeConvertedIntoBnbResponse = getAssetsThatCanBeConvertedIntoBnbResponse;
+type types$3_getAutoconvertingStableCoinsExchangerates = getAutoconvertingStableCoinsExchangerates;
 type types$3_getAutoconvertingStableCoinsResponse = getAutoconvertingStableCoinsResponse;
 type types$3_getCloudminingPaymentAndRefundHistoryOptions = getCloudminingPaymentAndRefundHistoryOptions;
 type types$3_getCloudminingPaymentAndRefundHistoryResponse = getCloudminingPaymentAndRefundHistoryResponse;
+type types$3_getCloudminingPaymentAndRefundHistoryRows = getCloudminingPaymentAndRefundHistoryRows;
 type types$3_getConvertTransferOptions = getConvertTransferOptions;
 type types$3_getConvertTransferResponse = getConvertTransferResponse;
+type types$3_getConvertTransferRows = getConvertTransferRows;
 type types$3_getUserUniversalTransferHistoryOptions = getUserUniversalTransferHistoryOptions;
 type types$3_getUserUniversalTransferHistoryResponse = getUserUniversalTransferHistoryResponse;
 type types$3_getUserUniversalTransferHistoryRows = getUserUniversalTransferHistoryRows;
@@ -4517,20 +4705,28 @@ type types$3_withdrawOptions = withdrawOptions;
 type types$3_withdrawResponse = withdrawResponse;
 declare namespace types$3 {
   export {
+    types$3_accountApiTradingStatusData as accountApiTradingStatusData,
     types$3_accountApiTradingStatusOptions as accountApiTradingStatusOptions,
     types$3_accountApiTradingStatusResponse as accountApiTradingStatusResponse,
+    types$3_accountApiTradingStatusTriggercondition as accountApiTradingStatusTriggercondition,
     types$3_accountStatusOptions as accountStatusOptions,
     types$3_accountStatusResponse as accountStatusResponse,
+    types$3_allCoinsInformationNetworklist as allCoinsInformationNetworklist,
     types$3_allCoinsInformationOptions as allCoinsInformationOptions,
     types$3_allCoinsInformationResponse as allCoinsInformationResponse,
+    types$3_assetDetail as assetDetail,
     types$3_assetDetailOptions as assetDetailOptions,
     types$3_assetDetailResponse as assetDetailResponse,
     types$3_assetDividendRecordOptions as assetDividendRecordOptions,
     types$3_assetDividendRecordResponse as assetDividendRecordResponse,
+    types$3_assetDividendRecordRows as assetDividendRecordRows,
     types$3_convertTransferOptions as convertTransferOptions,
     types$3_convertTransferResponse as convertTransferResponse,
+    types$3_dailyAccountSnapshotBalances as dailyAccountSnapshotBalances,
+    types$3_dailyAccountSnapshotData as dailyAccountSnapshotData,
     types$3_dailyAccountSnapshotOptions as dailyAccountSnapshotOptions,
     types$3_dailyAccountSnapshotResponse as dailyAccountSnapshotResponse,
+    types$3_dailyAccountSnapshotSnapshotvos as dailyAccountSnapshotSnapshotvos,
     types$3_depositAddressOptions as depositAddressOptions,
     types$3_depositAddressResponse as depositAddressResponse,
     types$3_depositHistoryOptions as depositHistoryOptions,
@@ -4539,21 +4735,28 @@ declare namespace types$3 {
     types$3_disableFastWithdrawSwitchResponse as disableFastWithdrawSwitchResponse,
     types$3_dustTransferOptions as dustTransferOptions,
     types$3_dustTransferResponse as dustTransferResponse,
+    types$3_dustTransferTransferResult as dustTransferTransferResult,
     types$3_dustlogOptions as dustlogOptions,
     types$3_dustlogResponse as dustlogResponse,
+    types$3_dustlogUserassetdribbletdetails as dustlogUserassetdribbletdetails,
+    types$3_dustlogUserassetdribblets as dustlogUserassetdribblets,
     types$3_enableFastWithdrawSwitchOptions as enableFastWithdrawSwitchOptions,
     types$3_enableFastWithdrawSwitchResponse as enableFastWithdrawSwitchResponse,
     types$3_fundingWalletOptions as fundingWalletOptions,
     types$3_fundingWalletResponse as fundingWalletResponse,
     types$3_getApiKeyPermissionOptions as getApiKeyPermissionOptions,
     types$3_getApiKeyPermissionResponse as getApiKeyPermissionResponse,
+    types$3_getAssetsThatCanBeConvertedIntoBnbDetails as getAssetsThatCanBeConvertedIntoBnbDetails,
     types$3_getAssetsThatCanBeConvertedIntoBnbOptions as getAssetsThatCanBeConvertedIntoBnbOptions,
     types$3_getAssetsThatCanBeConvertedIntoBnbResponse as getAssetsThatCanBeConvertedIntoBnbResponse,
+    types$3_getAutoconvertingStableCoinsExchangerates as getAutoconvertingStableCoinsExchangerates,
     types$3_getAutoconvertingStableCoinsResponse as getAutoconvertingStableCoinsResponse,
     types$3_getCloudminingPaymentAndRefundHistoryOptions as getCloudminingPaymentAndRefundHistoryOptions,
     types$3_getCloudminingPaymentAndRefundHistoryResponse as getCloudminingPaymentAndRefundHistoryResponse,
+    types$3_getCloudminingPaymentAndRefundHistoryRows as getCloudminingPaymentAndRefundHistoryRows,
     types$3_getConvertTransferOptions as getConvertTransferOptions,
     types$3_getConvertTransferResponse as getConvertTransferResponse,
+    types$3_getConvertTransferRows as getConvertTransferRows,
     types$3_getUserUniversalTransferHistoryOptions as getUserUniversalTransferHistoryOptions,
     types$3_getUserUniversalTransferHistoryResponse as getUserUniversalTransferHistoryResponse,
     types$3_getUserUniversalTransferHistoryRows as getUserUniversalTransferHistoryRows,
@@ -4752,12 +4955,14 @@ interface orderReports extends Omit<newOcoOrderReports, 'stopPrice'>, sendMessag
 type types$2_CancelReplaceOrder = CancelReplaceOrder;
 type types$2_cancelOCOOrder = cancelOCOOrder;
 type types$2_cancelOCOOrderOptions = cancelOCOOrderOptions;
+type types$2_cancelOcoOrder = cancelOcoOrder;
 type types$2_cancelOpenOCOOrder = cancelOpenOCOOrder;
 type types$2_cancelOpenOrder = cancelOpenOrder;
 type types$2_cancelOpenOrdersOptions = cancelOpenOrdersOptions;
 type types$2_cancelOrder = cancelOrder;
 type types$2_cancelOrderOptions = cancelOrderOptions;
 type types$2_cancelReplaceOrderOptions = cancelReplaceOrderOptions;
+type types$2_cancelResponse = cancelResponse;
 type types$2_getOCOOpenOrdersOptions = getOCOOpenOrdersOptions;
 type types$2_getOCOOrderOptions = getOCOOrderOptions;
 type types$2_getOrderOptions = getOrderOptions;
@@ -4766,18 +4971,22 @@ type types$2_newOCOOrderOptions = newOCOOrderOptions;
 type types$2_newOrderOptions = newOrderOptions;
 type types$2_newOrderSOROptions = newOrderSOROptions;
 type types$2_openOrdersOptions = openOrdersOptions;
+type types$2_orderReport = orderReport;
+type types$2_orderReports = orderReports;
 type types$2_testNewOrderOptions = testNewOrderOptions;
 declare namespace types$2 {
   export {
     types$2_CancelReplaceOrder as CancelReplaceOrder,
     types$2_cancelOCOOrder as cancelOCOOrder,
     types$2_cancelOCOOrderOptions as cancelOCOOrderOptions,
+    types$2_cancelOcoOrder as cancelOcoOrder,
     types$2_cancelOpenOCOOrder as cancelOpenOCOOrder,
     types$2_cancelOpenOrder as cancelOpenOrder,
     types$2_cancelOpenOrdersOptions as cancelOpenOrdersOptions,
     types$2_cancelOrder as cancelOrder,
     types$2_cancelOrderOptions as cancelOrderOptions,
     types$2_cancelReplaceOrderOptions as cancelReplaceOrderOptions,
+    types$2_cancelResponse as cancelResponse,
     types$2_getOCOOpenOrdersOptions as getOCOOpenOrdersOptions,
     types$2_getOCOOrderOptions as getOCOOrderOptions,
     types$2_getOrderOptions as getOrderOptions,
@@ -4786,6 +4995,8 @@ declare namespace types$2 {
     types$2_newOrderOptions as newOrderOptions,
     types$2_newOrderSOROptions as newOrderSOROptions,
     types$2_openOrdersOptions as openOrdersOptions,
+    types$2_orderReport as orderReport,
+    types$2_orderReports as orderReports,
     types$2_testNewOrderOptions as testNewOrderOptions,
   };
 }
@@ -5077,7 +5288,7 @@ interface MarketMethods {
     symbolPriceTicker(options?: symbolPriceTickerOptions): Promise<symbolPriceTickerResponse | symbolPriceTickerResponse[]>;
     symbolOrderBookTicker(options?: symbolOrderBookTickerOptions): Promise<symbolOrderBookTickerResponse | symbolOrderBookTickerResponse[]>;
     rollingWindowPriceChangeStatistics(options?: rollingWindowPriceChangeStatisticsOptions): Promise<rollingWindowPriceChangeStatisticsResponse | rollingWindowPriceChangeStatisticsResponse[]>;
-    tradingDayTicker(symbol: string, options?: tradingDayTickerOptions): Promise<tradingDayTickerResponse | tradingDayTickerResponse[]>;
+    tradingDayTicker(options?: tradingDayTickerOptions): Promise<tradingDayTickerResponse | tradingDayTickerResponse[]>;
 }
 
 interface MarginMethods {
@@ -5138,6 +5349,29 @@ interface C2cMethods {
     detailWithAdvertiser(advNo: string): Promise<CommonRet_AdSearchResp>;
 }
 
+declare enum LogLevel {
+    NONE = "",
+    DEBUG = "debug",
+    INFO = "info",
+    WARN = "warn",
+    ERROR = "error"
+}
+declare class Logger {
+    private static instance;
+    private minLogLevel;
+    private readonly levelsOrder;
+    constructor();
+    static getInstance(): Logger;
+    setMinLogLevel(level: LogLevel): void;
+    private isValidLogLevel;
+    private log;
+    private allowLevelLog;
+    debug(...message: unknown[]): void;
+    info(...message: unknown[]): void;
+    warn(...message: unknown[]): void;
+    error(...message: unknown[]): void;
+}
+
 declare const SpotBase: Constructor<C2cMethods> & Constructor<MarginMethods> & Constructor<MarketMethods> & Constructor<SimpleEarnMethods> & Constructor<StreamMethods> & Constructor<SubAccountMethods> & Constructor<TradeMethods> & Constructor<WalletMethods> & {
     new (apiKey: string, apiSecret: string, options?: SpotOptions): {
         apiKey: string;
@@ -5149,6 +5383,7 @@ declare const SpotBase: Constructor<C2cMethods> & Constructor<MarginMethods> & C
         privateKey: Buffer;
         privateKeyPassphrase: string;
         privateKeyAlgo: 'RSA' | 'ED25519';
+        logger: Logger;
         makeRequest(method: string, url: string, data?: object): Promise<any>;
         preparePath(path: string, options?: object): string;
         prepareSignedPath(path: string, options?: object): string;
@@ -5162,14 +5397,16 @@ declare const WebsocketFeaturesBase: Constructor<AccountMethods> & Constructor<M
         callbacks: WebsocketCallbacks;
         reconnectDelay: number;
         wsConnection: WebsocketConnection;
+        logger: Logger;
     };
 };
 declare const WebsocketStreamFeaturesBase: Constructor<StreamMethods$1> & Constructor<websocketBaseMethods> & {
-    new (options?: WebsocketAPIOptions): {
+    new (options?: WebsocketStreamAPIOptions): {
         wsURL: string;
-        callbacks: WebsocketCallbacks;
+        callbacks: WebsocketStreamCallbacks;
         reconnectDelay: number;
         wsConnection: WebsocketConnection;
+        logger: Logger;
     };
 };
 
@@ -5181,6 +5418,14 @@ declare class WebsocketAPI extends WebsocketFeaturesBase {
     sendMessageWithAPIKey(method: string, options?: Omit<sendMessageOptions, 'timestamp' | 'signature'>): void;
     sendMessage(method: string, options?: Omit<sendMessageOptions, 'apiKey' | 'timestamp' | 'signature'>): void;
     sendSignatureMessage(method: string, options?: sendMessageOptions): void;
+}
+
+declare class WebsocketStream extends WebsocketStreamFeaturesBase {
+    combinedStreams: boolean;
+    constructor(options?: WebsocketStreamAPIOptions);
+    _prepareURL(stream: string | string[]): string;
+    subscribe(stream: string | string[]): void;
+    unsubscribe(stream: string | string[]): void;
 }
 
 interface websocketBaseMethods {
@@ -5219,6 +5464,18 @@ interface WebsocketOptions {
     reconnectDelay?: number;
     callbacks?: WebsocketCallbacks;
 }
+interface WebsocketStreamCallbacks {
+    open?: (client: WebsocketStream) => void;
+    close?: () => void;
+    ping?: (data?: object) => void;
+    pong?: () => void;
+    error?: () => void;
+    message?: (data: string) => void;
+}
+interface WebsocketStreamOptions {
+    reconnectDelay?: number;
+    callbacks?: WebsocketStreamCallbacks;
+}
 
 type Constructor<T = any> = new (...args: any[]) => T;
 interface SpotOptions {
@@ -5240,6 +5497,10 @@ interface WebsocketAPIOptions extends WebsocketOptions {
     wsURL?: string;
 }
 interface WebsocketAPIOptions extends WebsocketOptions {
+    wsURL?: string;
+    combinedStreams?: boolean;
+}
+interface WebsocketStreamAPIOptions extends WebsocketStreamOptions {
     wsURL?: string;
     combinedStreams?: boolean;
 }
@@ -5346,14 +5607,6 @@ declare namespace types {
 
 declare class Spot extends SpotBase {
     constructor(apiKey?: string, apiSecret?: string, options?: SpotOptions);
-}
-
-declare class WebsocketStream extends WebsocketStreamFeaturesBase {
-    combinedStreams: boolean;
-    constructor(options?: WebsocketAPIOptions);
-    _prepareURL(stream: string | string[]): string;
-    subscribe(stream: string | string[]): void;
-    unsubscribe(stream: string | string[]): void;
 }
 
 export { AccountSnapshotType, AccountType, AddLiquidityPreviewType, BusdStableCoinsConversion, CancelReplaceMode, CancelRestrictions, CancelResult, CrossMarginAccountTransferType, CrossMarginAccountType, CrossMarginTrans, DepositHistory, Direction, DustAccountType, Featured, FixedAndActivityProductType, FlexibleProductStatus, FlexibleProductType, FromAccountType, FuturesTransferType, FuturesType, GetCrossMargingTransferHistoryType, HisrecStatus, HistoryStatus, IncomeType, InterestBNBBurn, Interval, IsFreeze, IsIsolatedMargin, LendingType, LiquidityAddType, LiquidityRemoveType, MarginArchive, MarginBorrowRepayType, MarginInterestHistory, MarginLevelStatus, MarginStatus, MarginSubAccountTransferType, MarginTransferType, MargintransferType, NeedBtcValuation, NewOrderRespType, NewOrderResult, OCOOrderStatus, OCOStatusType, OcoNewOrderRespType, Operation, OptionalFixedAndActivityProductStatus, OptionalFlexibleProductStatus, OptionalSide, OptionalTransFrom, OptionalTransTo, OrderStatus, OrderType, Permissions, PositionSide, PositionStatus, QueryConvertTransfer, QuerySubAccountList, RedeemDestAccount, RemoveLiquidityPreviewType, types$a as RestC2cTypes, types$9 as RestMarginTypes, types$8 as RestMarketTypes, types$7 as RestSimpleEarnTypes, types$6 as RestStreamTypes, types$5 as RestSubAccountTypes, types$4 as RestTradeTypes, types$3 as RestWalletTypes, SelfTradePreventionMode, Side, SideEffectType, SimpleEarnDestAccount, SimpleEarnFlexibleRewards, SimpleEarnLockedRedemption, SimpleEarnSourceAccount, SimpleEarnStatus, SimpleEarnType, SortBy, Spot, SpotBNBBurn, StopLimitTimeInForce, SubAccountStatus, SubAccountTransferLog, SubUserHistoryType, SubscribeSourceAccount, SwapStatus, TimeInForce, ToAccountType, TradeType, TransFrom, TransTo, TransactionType, UnivStatus, UnivTransferType, Urgency, ValidTime, WebsocketAPI, WebsocketStream, WithdrawHistory, WorkingFloor, types as WsAccountTypes, types$1 as WsMarketTypes, types$2 as WsTradeTypes, methods as WsUserDataTypes, methods$1 as WssTypes, listenkeyResponse };
