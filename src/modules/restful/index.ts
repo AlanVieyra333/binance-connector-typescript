@@ -1,4 +1,5 @@
 import { mixinC2c } from './c2c/c2c';
+import { mixinFiat } from './fiat/fiat';
 import { mixinMargin } from './margin/margin';
 import { mixinMarket } from './market/market';
 import { mixinSimpleEarn } from './simpleEarn/simpleEarn';
@@ -9,6 +10,7 @@ import { mixinWallet } from './wallet/wallet';
 
 export {
     mixinC2c,
+    mixinFiat,
     mixinMargin,
     mixinMarket,
     mixinSimpleEarn,

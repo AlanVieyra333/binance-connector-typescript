@@ -1,4 +1,5 @@
 import * as RestC2cTypes from './modules/restful/c2c/types';
+import * as RestFiatTypes from './modules/restful/fiat/types';
 import * as RestMarginTypes from './modules/restful/margin/types';
 import * as RestMarketTypes from './modules/restful/market/types';
 import * as RestSimpleEarnTypes from './modules/restful/simpleEarn/types';
@@ -201,6 +202,7 @@ export {    AccountSnapshotType,
     WithdrawHistory,
     WorkingFloor,
     RestC2cTypes,
+    RestFiatTypes,
     RestMarginTypes,
     RestMarketTypes,
     RestSimpleEarnTypes,

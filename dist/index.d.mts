@@ -216,52 +216,84 @@ interface AdvertiserVo {
     userType?: string;
 }
 
-type types$a_AdDetailResp = AdDetailResp;
-type types$a_AdQueryByPageReq = AdQueryByPageReq;
-type types$a_AdSearchResp = AdSearchResp;
-type types$a_AdTradeMethodResp = AdTradeMethodResp;
-type types$a_AdVisibleRetVo = AdVisibleRetVo;
-type types$a_AdvertiserVo = AdvertiserVo;
-type types$a_AssetDetail = AssetDetail;
-type types$a_CommissionRateOverview = CommissionRateOverview;
-type types$a_CommissionRateOverviewAsset = CommissionRateOverviewAsset;
-type types$a_CommissionRateOverviewItem = CommissionRateOverviewItem;
-type types$a_CommonPageRet = CommonPageRet;
-type types$a_CommonPageRet_AdDetailResp = CommonPageRet_AdDetailResp;
-type types$a_CommonPageRet_AdSearchResp = CommonPageRet_AdSearchResp;
-type types$a_CommonPageRet_UserOrderHistory = CommonPageRet_UserOrderHistory;
-type types$a_CommonRet_AdDetailResp = CommonRet_AdDetailResp;
-type types$a_CommonRet_AdSearchResp = CommonRet_AdSearchResp;
-type types$a_CommonRet_CommissionRateOverview = CommonRet_CommissionRateOverview;
-type types$a_FiatDetail = FiatDetail;
-type types$a_TradeMethodCommissionRateVo = TradeMethodCommissionRateVo;
-type types$a_UserOrderHistory = UserOrderHistory;
-type types$a_listUserOrderHistoryOptions = listUserOrderHistoryOptions;
-type types$a_searchOptions = searchOptions;
+type types$b_AdDetailResp = AdDetailResp;
+type types$b_AdQueryByPageReq = AdQueryByPageReq;
+type types$b_AdSearchResp = AdSearchResp;
+type types$b_AdTradeMethodResp = AdTradeMethodResp;
+type types$b_AdVisibleRetVo = AdVisibleRetVo;
+type types$b_AdvertiserVo = AdvertiserVo;
+type types$b_AssetDetail = AssetDetail;
+type types$b_CommissionRateOverview = CommissionRateOverview;
+type types$b_CommissionRateOverviewAsset = CommissionRateOverviewAsset;
+type types$b_CommissionRateOverviewItem = CommissionRateOverviewItem;
+type types$b_CommonPageRet = CommonPageRet;
+type types$b_CommonPageRet_AdDetailResp = CommonPageRet_AdDetailResp;
+type types$b_CommonPageRet_AdSearchResp = CommonPageRet_AdSearchResp;
+type types$b_CommonPageRet_UserOrderHistory = CommonPageRet_UserOrderHistory;
+type types$b_CommonRet_AdDetailResp = CommonRet_AdDetailResp;
+type types$b_CommonRet_AdSearchResp = CommonRet_AdSearchResp;
+type types$b_CommonRet_CommissionRateOverview = CommonRet_CommissionRateOverview;
+type types$b_FiatDetail = FiatDetail;
+type types$b_TradeMethodCommissionRateVo = TradeMethodCommissionRateVo;
+type types$b_UserOrderHistory = UserOrderHistory;
+type types$b_listUserOrderHistoryOptions = listUserOrderHistoryOptions;
+type types$b_searchOptions = searchOptions;
+declare namespace types$b {
+  export {
+    types$b_AdDetailResp as AdDetailResp,
+    types$b_AdQueryByPageReq as AdQueryByPageReq,
+    types$b_AdSearchResp as AdSearchResp,
+    types$b_AdTradeMethodResp as AdTradeMethodResp,
+    types$b_AdVisibleRetVo as AdVisibleRetVo,
+    types$b_AdvertiserVo as AdvertiserVo,
+    types$b_AssetDetail as AssetDetail,
+    types$b_CommissionRateOverview as CommissionRateOverview,
+    types$b_CommissionRateOverviewAsset as CommissionRateOverviewAsset,
+    types$b_CommissionRateOverviewItem as CommissionRateOverviewItem,
+    types$b_CommonPageRet as CommonPageRet,
+    types$b_CommonPageRet_AdDetailResp as CommonPageRet_AdDetailResp,
+    types$b_CommonPageRet_AdSearchResp as CommonPageRet_AdSearchResp,
+    types$b_CommonPageRet_UserOrderHistory as CommonPageRet_UserOrderHistory,
+    types$b_CommonRet_AdDetailResp as CommonRet_AdDetailResp,
+    types$b_CommonRet_AdSearchResp as CommonRet_AdSearchResp,
+    types$b_CommonRet_CommissionRateOverview as CommonRet_CommissionRateOverview,
+    types$b_FiatDetail as FiatDetail,
+    types$b_TradeMethodCommissionRateVo as TradeMethodCommissionRateVo,
+    types$b_UserOrderHistory as UserOrderHistory,
+    types$b_listUserOrderHistoryOptions as listUserOrderHistoryOptions,
+    types$b_searchOptions as searchOptions,
+  };
+}
+
+interface CommonRet_FiatFee extends CommonRet {
+    data?: FiatFee[];
+}
+interface FiatFee {
+    currency: string;
+    channel: string;
+    depositFeeRate: number;
+    depositFixedFee: number;
+    depositStatus: string;
+    withdrawFeeRate: number | null;
+    withdrawFixedFee: number | null;
+    withdrawStatus: string | null;
+}
+interface CommonRet {
+    code?: string;
+    data?: any;
+    message?: string;
+    messageDetail?: string;
+    success?: boolean;
+}
+
+type types$a_CommonRet = CommonRet;
+type types$a_CommonRet_FiatFee = CommonRet_FiatFee;
+type types$a_FiatFee = FiatFee;
 declare namespace types$a {
   export {
-    types$a_AdDetailResp as AdDetailResp,
-    types$a_AdQueryByPageReq as AdQueryByPageReq,
-    types$a_AdSearchResp as AdSearchResp,
-    types$a_AdTradeMethodResp as AdTradeMethodResp,
-    types$a_AdVisibleRetVo as AdVisibleRetVo,
-    types$a_AdvertiserVo as AdvertiserVo,
-    types$a_AssetDetail as AssetDetail,
-    types$a_CommissionRateOverview as CommissionRateOverview,
-    types$a_CommissionRateOverviewAsset as CommissionRateOverviewAsset,
-    types$a_CommissionRateOverviewItem as CommissionRateOverviewItem,
-    types$a_CommonPageRet as CommonPageRet,
-    types$a_CommonPageRet_AdDetailResp as CommonPageRet_AdDetailResp,
-    types$a_CommonPageRet_AdSearchResp as CommonPageRet_AdSearchResp,
-    types$a_CommonPageRet_UserOrderHistory as CommonPageRet_UserOrderHistory,
-    types$a_CommonRet_AdDetailResp as CommonRet_AdDetailResp,
-    types$a_CommonRet_AdSearchResp as CommonRet_AdSearchResp,
-    types$a_CommonRet_CommissionRateOverview as CommonRet_CommissionRateOverview,
-    types$a_FiatDetail as FiatDetail,
-    types$a_TradeMethodCommissionRateVo as TradeMethodCommissionRateVo,
-    types$a_UserOrderHistory as UserOrderHistory,
-    types$a_listUserOrderHistoryOptions as listUserOrderHistoryOptions,
-    types$a_searchOptions as searchOptions,
+    types$a_CommonRet as CommonRet,
+    types$a_CommonRet_FiatFee as CommonRet_FiatFee,
+    types$a_FiatFee as FiatFee,
   };
 }
 
@@ -5340,6 +5372,10 @@ interface MarginMethods {
     getBorrowRepayRecords(type: MarginBorrowRepayType, options?: getBorrowRepayRecordsOptions): Promise<getBorrowRepayRecordsResponse>;
 }
 
+interface FiatMethods {
+    fiatFeeSettings(): Promise<CommonRet_FiatFee>;
+}
+
 interface C2cMethods {
     getDetailByNo(adsNo: string): Promise<CommonRet_AdDetailResp>;
     listWithPagination(page: number, rows: number, options?: AdQueryByPageReq): Promise<CommonPageRet_AdDetailResp>;
@@ -5372,7 +5408,7 @@ declare class Logger {
     error(...message: unknown[]): void;
 }
 
-declare const SpotBase: Constructor<C2cMethods> & Constructor<MarginMethods> & Constructor<MarketMethods> & Constructor<SimpleEarnMethods> & Constructor<StreamMethods> & Constructor<SubAccountMethods> & Constructor<TradeMethods> & Constructor<WalletMethods> & {
+declare const SpotBase: Constructor<C2cMethods> & Constructor<FiatMethods> & Constructor<MarginMethods> & Constructor<MarketMethods> & Constructor<SimpleEarnMethods> & Constructor<StreamMethods> & Constructor<SubAccountMethods> & Constructor<TradeMethods> & Constructor<WalletMethods> & {
     new (apiKey: string, apiSecret: string, options?: SpotOptions): {
         apiKey: string;
         apiSecret: string;
@@ -5609,4 +5645,4 @@ declare class Spot extends SpotBase {
     constructor(apiKey?: string, apiSecret?: string, options?: SpotOptions);
 }
 
-export { AccountSnapshotType, AccountType, AddLiquidityPreviewType, BusdStableCoinsConversion, CancelReplaceMode, CancelRestrictions, CancelResult, CrossMarginAccountTransferType, CrossMarginAccountType, CrossMarginTrans, DepositHistory, Direction, DustAccountType, Featured, FixedAndActivityProductType, FlexibleProductStatus, FlexibleProductType, FromAccountType, FuturesTransferType, FuturesType, GetCrossMargingTransferHistoryType, HisrecStatus, HistoryStatus, IncomeType, InterestBNBBurn, Interval, IsFreeze, IsIsolatedMargin, LendingType, LiquidityAddType, LiquidityRemoveType, MarginArchive, MarginBorrowRepayType, MarginInterestHistory, MarginLevelStatus, MarginStatus, MarginSubAccountTransferType, MarginTransferType, MargintransferType, NeedBtcValuation, NewOrderRespType, NewOrderResult, OCOOrderStatus, OCOStatusType, OcoNewOrderRespType, Operation, OptionalFixedAndActivityProductStatus, OptionalFlexibleProductStatus, OptionalSide, OptionalTransFrom, OptionalTransTo, OrderStatus, OrderType, Permissions, PositionSide, PositionStatus, QueryConvertTransfer, QuerySubAccountList, RedeemDestAccount, RemoveLiquidityPreviewType, types$a as RestC2cTypes, types$9 as RestMarginTypes, types$8 as RestMarketTypes, types$7 as RestSimpleEarnTypes, types$6 as RestStreamTypes, types$5 as RestSubAccountTypes, types$4 as RestTradeTypes, types$3 as RestWalletTypes, SelfTradePreventionMode, Side, SideEffectType, SimpleEarnDestAccount, SimpleEarnFlexibleRewards, SimpleEarnLockedRedemption, SimpleEarnSourceAccount, SimpleEarnStatus, SimpleEarnType, SortBy, Spot, SpotBNBBurn, StopLimitTimeInForce, SubAccountStatus, SubAccountTransferLog, SubUserHistoryType, SubscribeSourceAccount, SwapStatus, TimeInForce, ToAccountType, TradeType, TransFrom, TransTo, TransactionType, UnivStatus, UnivTransferType, Urgency, ValidTime, WebsocketAPI, WebsocketStream, WithdrawHistory, WorkingFloor, types as WsAccountTypes, types$1 as WsMarketTypes, types$2 as WsTradeTypes, methods as WsUserDataTypes, methods$1 as WssTypes, listenkeyResponse };
+export { AccountSnapshotType, AccountType, AddLiquidityPreviewType, BusdStableCoinsConversion, CancelReplaceMode, CancelRestrictions, CancelResult, CrossMarginAccountTransferType, CrossMarginAccountType, CrossMarginTrans, DepositHistory, Direction, DustAccountType, Featured, FixedAndActivityProductType, FlexibleProductStatus, FlexibleProductType, FromAccountType, FuturesTransferType, FuturesType, GetCrossMargingTransferHistoryType, HisrecStatus, HistoryStatus, IncomeType, InterestBNBBurn, Interval, IsFreeze, IsIsolatedMargin, LendingType, LiquidityAddType, LiquidityRemoveType, MarginArchive, MarginBorrowRepayType, MarginInterestHistory, MarginLevelStatus, MarginStatus, MarginSubAccountTransferType, MarginTransferType, MargintransferType, NeedBtcValuation, NewOrderRespType, NewOrderResult, OCOOrderStatus, OCOStatusType, OcoNewOrderRespType, Operation, OptionalFixedAndActivityProductStatus, OptionalFlexibleProductStatus, OptionalSide, OptionalTransFrom, OptionalTransTo, OrderStatus, OrderType, Permissions, PositionSide, PositionStatus, QueryConvertTransfer, QuerySubAccountList, RedeemDestAccount, RemoveLiquidityPreviewType, types$b as RestC2cTypes, types$a as RestFiatTypes, types$9 as RestMarginTypes, types$8 as RestMarketTypes, types$7 as RestSimpleEarnTypes, types$6 as RestStreamTypes, types$5 as RestSubAccountTypes, types$4 as RestTradeTypes, types$3 as RestWalletTypes, SelfTradePreventionMode, Side, SideEffectType, SimpleEarnDestAccount, SimpleEarnFlexibleRewards, SimpleEarnLockedRedemption, SimpleEarnSourceAccount, SimpleEarnStatus, SimpleEarnType, SortBy, Spot, SpotBNBBurn, StopLimitTimeInForce, SubAccountStatus, SubAccountTransferLog, SubUserHistoryType, SubscribeSourceAccount, SwapStatus, TimeInForce, ToAccountType, TradeType, TransFrom, TransTo, TransactionType, UnivStatus, UnivTransferType, Urgency, ValidTime, WebsocketAPI, WebsocketStream, WithdrawHistory, WorkingFloor, types as WsAccountTypes, types$1 as WsMarketTypes, types$2 as WsTradeTypes, methods as WsUserDataTypes, methods$1 as WssTypes, listenkeyResponse };

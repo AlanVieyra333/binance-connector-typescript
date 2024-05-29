@@ -120,7 +120,7 @@ export function mixinC2c<T extends Constructor>(base: T): Constructor<C2cMethods
 
 
         /**
-        * Get adv detail by number. (P2P API: https://p2p.binance.com/bapi)
+        * Get adv detail by number. (BAPI: https://www.binance.com/bapi)
         *
         * @param {number} advNo
         */

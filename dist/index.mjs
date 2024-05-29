@@ -1,35 +1,38 @@
 // src/modules/restful/c2c/types.ts
 var types_exports = {};
 
-// src/modules/restful/margin/types.ts
+// src/modules/restful/fiat/types.ts
 var types_exports2 = {};
 
-// src/modules/restful/market/types.ts
+// src/modules/restful/margin/types.ts
 var types_exports3 = {};
 
-// src/modules/restful/simpleEarn/types.ts
+// src/modules/restful/market/types.ts
 var types_exports4 = {};
 
-// src/modules/restful/stream/types.ts
+// src/modules/restful/simpleEarn/types.ts
 var types_exports5 = {};
 
-// src/modules/restful/subAccount/types.ts
+// src/modules/restful/stream/types.ts
 var types_exports6 = {};
 
-// src/modules/restful/trade/types.ts
+// src/modules/restful/subAccount/types.ts
 var types_exports7 = {};
 
-// src/modules/restful/wallet/types.ts
+// src/modules/restful/trade/types.ts
 var types_exports8 = {};
 
-// src/modules/websocket/websocketAPI/account/types.ts
+// src/modules/restful/wallet/types.ts
 var types_exports9 = {};
 
-// src/modules/websocket/websocketAPI/market/types.ts
+// src/modules/websocket/websocketAPI/account/types.ts
 var types_exports10 = {};
 
-// src/modules/websocket/websocketAPI/trade/types.ts
+// src/modules/websocket/websocketAPI/market/types.ts
 var types_exports11 = {};
+
+// src/modules/websocket/websocketAPI/trade/types.ts
+var types_exports12 = {};
 
 // src/modules/websocket/websocketAPI/userData/methods.ts
 var methods_exports = {};
@@ -216,7 +219,7 @@ function mixinC2c(base) {
       return await this.makeRequest("POST", url, data);
     }
     /**
-    * Get adv detail by number. (P2P API: https://p2p.binance.com/bapi)
+    * Get adv detail by number. (BAPI: https://www.binance.com/bapi)
     *
     * @param {number} advNo
     */
@@ -229,6 +232,19 @@ function mixinC2c(base) {
         }
       );
       return await this.makeRequest("GET", url);
+    }
+  };
+}
+
+// src/modules/restful/fiat/fiat.ts
+function mixinFiat(base) {
+  return class extends base {
+    /**
+    * Get list of fiat fees. (BAPI: https://www.binance.com/bapi)
+    * 
+    */
+    async fiatFeeSettings() {
+      return await this.makeRequest("GET", "/bapi/fiat/v1/public/fiatpayment/fiat-fee/settings");
     }
   };
 }
@@ -5011,7 +5027,7 @@ var Logger = class _Logger {
 };
 
 // src/setters/mixinBase.ts
-var SpotBase = mixinC2c(mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixinSubAccount(mixinTrade(mixinWallet(class {
+var SpotBase = mixinC2c(mixinFiat(mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixinSubAccount(mixinTrade(mixinWallet(class {
   constructor(apiKey, apiSecret, options = {}) {
     this.logger = Logger.getInstance();
     this.apiKey = apiKey;
@@ -5067,7 +5083,7 @@ var SpotBase = mixinC2c(mixinMargin(mixinMarket(mixinSimpleEarn(mixinStream(mixi
     }
     return `${path}?${params}&signature=${signature}`;
   }
-}))))))));
+})))))))));
 var WebsocketFeaturesBase = mixinWsAccount(mixinWsMarket(mixinWsTrade(mixinWsUserData(WebsocketBase(class {
   constructor(apiKey, apiSecret, options) {
     this.logger = Logger.getInstance();
@@ -5858,13 +5874,14 @@ export {
   RedeemDestAccount,
   RemoveLiquidityPreviewType,
   types_exports as RestC2cTypes,
-  types_exports2 as RestMarginTypes,
-  types_exports3 as RestMarketTypes,
-  types_exports4 as RestSimpleEarnTypes,
-  types_exports5 as RestStreamTypes,
-  types_exports6 as RestSubAccountTypes,
-  types_exports7 as RestTradeTypes,
-  types_exports8 as RestWalletTypes,
+  types_exports2 as RestFiatTypes,
+  types_exports3 as RestMarginTypes,
+  types_exports4 as RestMarketTypes,
+  types_exports5 as RestSimpleEarnTypes,
+  types_exports6 as RestStreamTypes,
+  types_exports7 as RestSubAccountTypes,
+  types_exports8 as RestTradeTypes,
+  types_exports9 as RestWalletTypes,
   SelfTradePreventionMode,
   Side,
   SideEffectType,
@@ -5897,9 +5914,9 @@ export {
   WebsocketStream,
   WithdrawHistory,
   WorkingFloor,
-  types_exports9 as WsAccountTypes,
-  types_exports10 as WsMarketTypes,
-  types_exports11 as WsTradeTypes,
+  types_exports10 as WsAccountTypes,
+  types_exports11 as WsMarketTypes,
+  types_exports12 as WsTradeTypes,
   methods_exports as WsUserDataTypes,
   methods_exports2 as WssTypes
 };
